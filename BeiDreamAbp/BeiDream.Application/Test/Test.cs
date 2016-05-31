@@ -1,4 +1,4 @@
-﻿namespace BeiDream.Mpa.App_Data
+﻿namespace BeiDream.Application.Test
 {
     public class Test:ITest
     {

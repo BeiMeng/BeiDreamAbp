@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Abp.Modules;
@@ -21,6 +22,8 @@ namespace BeiDream.Mpa
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
             //注册区域
             AreaRegistration.RegisterAllAreas();
+            //WebApi注册
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             //注册MVC路由
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

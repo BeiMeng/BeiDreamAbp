@@ -1,6 +1,6 @@
 ﻿using Abp.Dependency;
 
-namespace BeiDream.Mpa.App_Data
+namespace BeiDream.Application.Test
 {
     public interface ITest:ITransientDependency
     {
