@@ -125,7 +125,63 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Content\bootstrap-reset.css" />
+    <Content Include="Areas\Admin\Content\custom-ico-fonts.css" />
+    <Content Include="Areas\Admin\Content\jquery-ui-1.10.3.css" />
+    <Content Include="Areas\Admin\Content\style-responsive.css" />
+    <Content Include="Areas\Admin\Content\style.css" />
+    <Content Include="Areas\Admin\fonts\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\images\404-error.png" />
+    <Content Include="Areas\Admin\images\500-error.png" />
+    <Content Include="Areas\Admin\images\alert.png" />
+    <Content Include="Areas\Admin\images\avatar-mini.jpg" />
+    <Content Include="Areas\Admin\images\error.png" />
+    <Content Include="Areas\Admin\images\input-spinner.gif" />
+    <Content Include="Areas\Admin\images\invoice-logo.jpg" />
+    <Content Include="Areas\Admin\images\lockscreen-bg.jpg" />
+    <Content Include="Areas\Admin\images\login-bg.jpg" />
+    <Content Include="Areas\Admin\images\login-logo.png" />
+    <Content Include="Areas\Admin\images\logo.png" />
+    <Content Include="Areas\Admin\images\logo_icon.png" />
+    <Content Include="Areas\Admin\images\minus.png" />
+    <Content Include="Areas\Admin\images\plus-white.png" />
+    <Content Include="Areas\Admin\images\plus.png" />
+    <Content Include="Areas\Admin\Scripts\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Areas\Admin\Scripts\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.nicescroll.js" />
+    <Content Include="Areas\Admin\Scripts\modernizr.min.js" />
+    <Content Include="Areas\Admin\Scripts\scripts.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\fonts\custom-ico-fonts\custom-ico-font-.eot" />
+    <Content Include="Areas\Admin\fonts\custom-ico-fonts\custom-ico-font.eot" />
+    <Content Include="Areas\Admin\fonts\custom-ico-fonts\custom-ico-font.ttf" />
+    <Content Include="Areas\Admin\fonts\fonts\fontawesome-webfont-.eot" />
+    <Content Include="Areas\Admin\fonts\fonts\fontawesome-webfont-v=4.0.3.eot" />
+    <Content Include="Areas\Admin\fonts\fonts\fontawesome-webfont-v=4.0.3.ttf" />
+    <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular-.eot" />
+    <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <None Include="Areas\Admin\Views\Index\Index.cshtml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +189,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\IndexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -144,6 +202,7 @@
     <Content Include="packages.config" />
     <Content Include="log4net.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -153,6 +212,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
