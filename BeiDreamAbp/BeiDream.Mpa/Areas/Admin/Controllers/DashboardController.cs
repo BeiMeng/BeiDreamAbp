@@ -10,10 +10,10 @@ namespace BeiDream.Mpa.Areas.Admin.Controllers
     public class DashboardController : AbpController
     {
         // GET: Admin/Index
-        public ActionResult Index()
+        public ActionResult Index(string activePageMenu)
         {
             ViewBag.Title = "主页";
-            ViewBag.ActivePageMenu = "Business";
+            ViewBag.ActivePageMenu = activePageMenu;
             return View();
         }
     }

@@ -28,7 +28,7 @@ namespace BeiDream.Mpa.Areas.Admin.Controllers
         {
             if (activePageMenu.IsNullOrEmpty())
             {
-                activePageMenu = "MainMenu";
+                activePageMenu = "MenuReply";
             }
             var sidebarModel = new SidebarViewModel
             {

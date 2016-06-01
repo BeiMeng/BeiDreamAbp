@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace BeiDream.Mpa.Areas.Business
+namespace BeiDream.Mpa.Areas.MicroSite
 {
-    public class BusinessAreaRegistration : AreaRegistration 
+    public class MicroSiteAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "Business";
+                return "MicroSite";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Business_default",
-                "Business/{controller}/{action}/{id}",
+                "MicroSite_default",
+                "MicroSite/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

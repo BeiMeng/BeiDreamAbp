@@ -1,7 +1,8 @@
 ﻿@model BeiDream.Mpa.Areas.Admin.Models.Layout.PageMenuViewModel
 
-<!--search start-->
-<form class="searchform" action="http://view.jqueryfuns.com/2014/4/10/7_df25ceea231ba5f44f0fc060c943cdae/index.html" method="post">
-    <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
-</form>
-<!--search end-->
+<ul>
+    <li class="active"><a href="@Url.Action("Index", "Dashboard", new {area = "Admin", activePageMenu = "MenuReply"})"><i class="fa fa-apple"></i>菜单回复</a></li>
+    <li><a href="@Url.Action("Index", "Dashboard", new { area = "Admin", activePageMenu = "MicroSite" })"><i class="fa fa-apple"></i>微网站</a></li>
+    <li><a href="@Url.Action("Index", "Dashboard", new { area = "Admin", activePageMenu = "SysManage" })"><i class="fa fa-apple"></i>系统管理</a></li>
+
+</ul>

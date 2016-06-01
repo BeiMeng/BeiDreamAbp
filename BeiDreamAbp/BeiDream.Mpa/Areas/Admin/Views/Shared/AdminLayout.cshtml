@@ -34,7 +34,7 @@
 
 
             <div class="left-side-inner">
-                @Html.Action("Sidebar", "Layout",new { activePageMenu = ViewBag.ActivePageMenu})
+                @Html.Action("Sidebar", "Layout",new {area = "Admin", activePageMenu = ViewBag.ActivePageMenu})
             </div>
         </div>
         <!-- left side end-->
@@ -49,13 +49,13 @@
                 <!--toggle button end-->
 
                 <!--page menu start -->
-                    @Html.Action("PageMenu", "Layout")
+                    @Html.Action("PageMenu", "Layout", new { area = "Admin" })
                 <!--page menu end -->
 
 
                 <!--notification menu start -->
                 <div class="menu-right">
-                    @Html.Action("NotificationMenu", "Layout")
+                    @Html.Action("NotificationMenu", "Layout", new { area = "Admin" })
                 </div>
                 <!--notification menu end -->
 
