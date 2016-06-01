@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Abp.Web.Mvc.Controllers;
 using BeiDream.Application;
 using BeiDream.Application.Test;
 
 namespace BeiDream.Mpa.Controllers
 {
 
-    public class HomeController : Controller
+    public class HomeController : AbpController
     {
         private readonly ITest _test;
 

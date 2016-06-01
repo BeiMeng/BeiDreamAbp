@@ -176,7 +176,10 @@
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <None Include="Areas\Admin\Views\Index\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_Sidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_NotificationMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_PageMenu.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -190,7 +193,11 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\IndexController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\NotificationMenuViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\PageMenuViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\SidebarViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -212,7 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
