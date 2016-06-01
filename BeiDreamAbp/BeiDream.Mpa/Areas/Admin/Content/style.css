@@ -547,6 +547,7 @@ h5.left-nav-title {
 .header-section {
     background: #fff;
     border-bottom: 1px solid #eff0f4;
+    height: 50px;
 }
 
 .header-section::after {

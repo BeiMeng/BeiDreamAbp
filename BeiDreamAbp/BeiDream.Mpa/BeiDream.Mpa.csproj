@@ -180,6 +180,9 @@
     <Content Include="Areas\Admin\Views\Layout\_Sidebar.cshtml" />
     <Content Include="Areas\Admin\Views\Layout\_NotificationMenu.cshtml" />
     <Content Include="Areas\Admin\Views\Layout\_PageMenu.cshtml" />
+    <Content Include="Areas\Business\Views\web.config" />
+    <Content Include="Areas\Business\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Business\Views\Default\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -189,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\MpaWebModule.cs" />
+    <Compile Include="App_Start\BeiDreamNavigationProvider.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -198,6 +202,8 @@
     <Compile Include="Areas\Admin\Models\Layout\NotificationMenuViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\PageMenuViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\SidebarViewModel.cs" />
+    <Compile Include="Areas\Business\BusinessAreaRegistration.cs" />
+    <Compile Include="Areas\Business\Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -219,6 +225,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Business\Models\" />
+    <Folder Include="Areas\Business\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

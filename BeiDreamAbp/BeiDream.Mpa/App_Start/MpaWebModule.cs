@@ -15,7 +15,8 @@ namespace BeiDream.Mpa
     {
         public override void PreInitialize()
         {
-
+            //Configure navigation/menu
+            Configuration.Navigation.Providers.Add<BeiDreamNavigationProvider>();
         }
 
         public override void Initialize()

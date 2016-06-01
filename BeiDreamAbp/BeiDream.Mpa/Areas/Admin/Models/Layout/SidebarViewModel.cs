@@ -6,6 +6,6 @@ namespace BeiDream.Mpa.Areas.Admin.Models.Layout
     {
         public UserMenu Menu { get; set; }
 
-        public string CurrentPageName { get; set; } 
+        public string ActivePageMenuName { get; set; } 
     }
 }

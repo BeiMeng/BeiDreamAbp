@@ -82,22 +82,22 @@ namespace Abp.Application.Navigation
 
                 foreach (var menuItemDefinition in menuItemDefinitions)
                 {
-                    if (menuItemDefinition.RequiresAuthentication && user == null)
-                    {
-                        continue;
-                    }
+                    //if (menuItemDefinition.RequiresAuthentication && user == null)
+                    //{
+                    //    continue;
+                    //}
 
-                    if (!string.IsNullOrEmpty(menuItemDefinition.RequiredPermissionName) && (user == null || !(await PermissionChecker.IsGrantedAsync(user, menuItemDefinition.RequiredPermissionName))))
-                    {
-                        continue;
-                    }
+                    //if (!string.IsNullOrEmpty(menuItemDefinition.RequiredPermissionName) && (user == null || !(await PermissionChecker.IsGrantedAsync(user, menuItemDefinition.RequiredPermissionName))))
+                    //{
+                    //    continue;
+                    //}
 
-                    if (menuItemDefinition.FeatureDependency != null &&
-                        (AbpSession.MultiTenancySide == MultiTenancySides.Tenant || (user != null && user.TenantId != null)) &&
-                        !(await menuItemDefinition.FeatureDependency.IsSatisfiedAsync(featureDependencyContext.Object)))
-                    {
-                        continue;
-                    }
+                    //if (menuItemDefinition.FeatureDependency != null &&
+                    //    (AbpSession.MultiTenancySide == MultiTenancySides.Tenant || (user != null && user.TenantId != null)) &&
+                    //    !(await menuItemDefinition.FeatureDependency.IsSatisfiedAsync(featureDependencyContext.Object)))
+                    //{
+                    //    continue;
+                    //}
 
                     var userMenuItem = new UserMenuItem(menuItemDefinition, _localizationContext);
                     if (menuItemDefinition.IsLeaf || (await FillUserMenuItems(user, menuItemDefinition.Items, userMenuItem.Items)) > 0)

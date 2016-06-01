@@ -13,6 +13,7 @@ namespace BeiDream.Mpa.Areas.Admin.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "主页";
+            ViewBag.ActivePageMenu = "Business";
             return View();
         }
     }
