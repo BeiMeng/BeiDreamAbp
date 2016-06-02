@@ -82,9 +82,14 @@
   <ItemGroup>
     <Content Include="Areas\Admin\Content\animate.min.css" />
     <Content Include="Areas\Admin\Content\font-awesome.min93e3.css" />
+    <Content Include="Areas\Admin\Content\patterns\header-profile-skin-1.png" />
+    <Content Include="Areas\Admin\Content\patterns\header-profile-skin-3.png" />
+    <Content Include="Areas\Admin\Content\patterns\header-profile.png" />
+    <Content Include="Areas\Admin\Content\patterns\shattered.png" />
     <Content Include="Areas\Admin\Content\style.min862f.css" />
     <Content Include="Areas\Admin\fonts\fontawesome-webfont93e3.svg" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\images\profile_small.jpg" />
     <Content Include="Areas\Admin\Scripts\contabs.min.js" />
     <Content Include="Areas\Admin\Scripts\hplus.min862f.js" />
     <Content Include="Areas\Admin\Scripts\plugins\layer\laydate\laydate.js" />
