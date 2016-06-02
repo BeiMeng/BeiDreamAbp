@@ -5,23 +5,23 @@
 <!--sidebar nav start-->
 <ul class="nav nav-pills nav-stacked custom-nav">
 
-    @foreach (var menuItem in Model.Menu.Items)
-    {
-        if (menuItem.Items.IsNullOrEmpty())
+        @foreach (var menuItem in Model.Menu.Items)
         {
-            <li>
-                <a href="@menuItem.Url">
-                    @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
-                    {
-                        <i class="@menuItem.Icon"></i>
-                    }
-                    <span>@menuItem.DisplayName</span>
-                </a>
-            </li>
-        }
-        else
-        {
-            <li class="menu-list">
+            if (menuItem.Items.IsNullOrEmpty())
+            {
+                <li class="@(menuItem.Name==Model.ActiveMenuName?"active":"")">
+                    <a href="@menuItem.Url">
+                        @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+                        {
+                            <i class="@menuItem.Icon"></i>
+                        }
+                        <span>@menuItem.DisplayName</span>
+                    </a>
+                </li>
+            }
+            else
+            {
+            <li class="menu-list @(menuItem.Items.SingleOrDefault(p => p.Name == Model.ActiveMenuName) == null ? "" : "nav-active")">
                 <a href="">
                     @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
                     {
@@ -32,7 +32,7 @@
                 <ul class="sub-menu-list">
                     @foreach (var subMenuItem in menuItem.Items)
                     {
-                        <li>
+                        <li class="@(subMenuItem.Name == Model.ActiveMenuName ? "active" : "")">
                             <a class="menuItem" href="@subMenuItem.Url">
                                 @if (!string.IsNullOrWhiteSpace(subMenuItem.Icon))
                                 {
@@ -44,7 +44,6 @@
                     }
                 </ul>
             </li>
-
           }
 }
 

@@ -8,7 +8,7 @@
     <title>@ViewBag.Title</title>
     <link href="~/Areas/Admin/Content/style.css" rel="stylesheet" />
     <link href="~/Areas/Admin/Content/style-responsive.css" rel="stylesheet" />
-
+    @RenderSection("head", false)
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -34,7 +34,7 @@
 
 
             <div class="left-side-inner">
-                @Html.Action("Sidebar", "Layout",new {area = "Admin", activePageMenu = ViewBag.ActivePageMenu})
+                @Html.Action("Sidebar", "Layout", new { area = "Admin", activePageMenu = ViewBag.ActivePageMenu, activeMenu = ViewBag.ActiveMenu })
             </div>
         </div>
         <!-- left side end-->
@@ -49,7 +49,7 @@
                 <!--toggle button end-->
 
                 <!--page menu start -->
-                    @Html.Action("PageMenu", "Layout", new { area = "Admin" })
+                    @Html.Action("PageMenu", "Layout", new { area = "Admin", activePageMenu = ViewBag.ActivePageMenu })
                 <!--page menu end -->
 
 
@@ -87,6 +87,6 @@
     <script src="~/Areas/Admin/Scripts/jquery.nicescroll.js"></script>
     <!--common scripts for all pages-->
     <script src="~/Areas/Admin/Scripts/scripts.js"></script>
-
+    @RenderSection("Scripts", false)
 </body>
 </html>

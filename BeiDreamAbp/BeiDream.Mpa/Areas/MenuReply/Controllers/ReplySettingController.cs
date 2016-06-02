@@ -7,13 +7,13 @@ using Abp.Web.Mvc.Controllers;
 
 namespace BeiDream.Mpa.Areas.MenuReply.Controllers
 {
-    public class MenuSettingController : AbpController
+    public class ReplySettingController : AbpController
     {
-        // GET: MenuReply/MenuSetting
+        // GET: MenuReply/ReplySetting
         public ActionResult Index()
         {
             ViewBag.ActivePageMenu = "MenuReply";
-            ViewBag.ActiveMenu = "MenuSetting";
+            ViewBag.ActiveMenu = "ReplySetting";
             return View();
         }
     }

@@ -7,13 +7,13 @@ using Abp.Web.Mvc.Controllers;
 
 namespace BeiDream.Mpa.Areas.SysManage.Controllers
 {
-    public class UserController : AbpController
+    public class RoleController : AbpController
     {
-        // GET: SysManage/User
+        // GET: SysManage/Role
         public ActionResult Index()
         {
             ViewBag.ActivePageMenu = "SysManage";
-            ViewBag.ActiveMenu = "User";
+            ViewBag.ActiveMenu = "Role";
             return View();
         }
     }

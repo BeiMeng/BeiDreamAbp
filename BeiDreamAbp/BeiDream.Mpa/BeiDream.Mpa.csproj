@@ -188,6 +188,8 @@
     <Content Include="Areas\MicroSite\Views\Article\Index.cshtml" />
     <Content Include="Areas\MenuReply\Views\MenuSetting\Index.cshtml" />
     <Content Include="Areas\MenuReply\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SysManage\Views\Role\Index.cshtml" />
+    <Content Include="Areas\MenuReply\Views\ReplySetting\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -204,13 +206,16 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\CommonParamsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\NotificationMenuViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\PageMenuViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\SidebarViewModel.cs" />
     <Compile Include="Areas\MenuReply\Controllers\MenuSettingController.cs" />
+    <Compile Include="Areas\MenuReply\Controllers\ReplySettingController.cs" />
     <Compile Include="Areas\MenuReply\MenuReplyAreaRegistration.cs" />
     <Compile Include="Areas\MicroSite\Controllers\ArticleController.cs" />
     <Compile Include="Areas\MicroSite\MicroSiteAreaRegistration.cs" />
+    <Compile Include="Areas\SysManage\Controllers\RoleController.cs" />
     <Compile Include="Areas\SysManage\Controllers\UserController.cs" />
     <Compile Include="Areas\SysManage\SysManageAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />

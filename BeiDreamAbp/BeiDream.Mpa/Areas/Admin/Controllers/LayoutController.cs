@@ -24,7 +24,7 @@ namespace BeiDream.Mpa.Areas.Admin.Controllers
         }
 
         #region 根据菜单名称获取左侧导航项
-        public PartialViewResult Sidebar(string activePageMenu)
+        public PartialViewResult Sidebar(string activePageMenu, string activeMenu)
         {
             if (activePageMenu.IsNullOrEmpty())
             {
@@ -33,7 +33,8 @@ namespace BeiDream.Mpa.Areas.Admin.Controllers
             var sidebarModel = new SidebarViewModel
             {
                 Menu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync(activePageMenu, GetNormalizedUserIdentifier(null, AbpSession.UserId))),
-                ActivePageMenuName = activePageMenu
+                ActivePageMenuName = activePageMenu,
+                ActiveMenuName = activeMenu
             };
             return PartialView("_Sidebar", sidebarModel);
         }
@@ -67,7 +68,7 @@ namespace BeiDream.Mpa.Areas.Admin.Controllers
             var notificationMenuModel = new NotificationMenuViewModel();
             return PartialView("_NotificationMenu", notificationMenuModel);
         }
-        public PartialViewResult PageMenu()
+        public PartialViewResult PageMenu(string activePageMenu)
         {
             var pageMenu = new PageMenuViewModel();
             return PartialView("_PageMenu", pageMenu);

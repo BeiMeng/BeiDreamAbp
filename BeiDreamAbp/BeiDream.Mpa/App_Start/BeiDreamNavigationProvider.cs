@@ -24,15 +24,15 @@ namespace BeiDream.Mpa
                     L("业务模块一"),
                     icon: "fa fa-music"
                     ).AddItem(new MenuItemDefinition(
-                    "Users",
+                    "MenuSetting",
                     L("菜单设置"),
                     url: "/MenuReply/MenuSetting",
                     icon: "fa fa-music",
                     requiresAuthentication: true
                     )).AddItem(new MenuItemDefinition(
-                        "Roles",
-                        L("业务二"),
-                        url: "/SystemManage/Roles",
+                        "ReplySetting",
+                        L("回复设置"),
+                        url: "/MenuReply/ReplySetting",
                         icon: "fa fa-music",
                         requiresAuthentication: true
                     ))
@@ -160,15 +160,15 @@ namespace BeiDream.Mpa
                     L("系统管理一"),
                     icon: "fa fa-music"
                     ).AddItem(new MenuItemDefinition(
-                    "Users",
+                    "User",
                     L("用户管理"),
                     url: "/SysManage/User",
                     icon: "fa fa-music",
                     requiresAuthentication: true
                     )).AddItem(new MenuItemDefinition(
-                        "Roles",
-                        L("系统二"),
-                        url: "/SystemManage/Roles",
+                        "Role",
+                        L("角色管理"),
+                        url: "/SysManage/Role",
                         icon: "fa fa-music",
                         requiresAuthentication: true
                     ))
