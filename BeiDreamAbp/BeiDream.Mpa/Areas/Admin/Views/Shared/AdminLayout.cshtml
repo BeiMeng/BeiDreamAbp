@@ -1,11 +1,12 @@
-﻿<html lang="en">
+﻿@model BeiDream.Mpa.Areas.Admin.Models.Layout.CommonParamsViewModel
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
 
-    <title>@ViewBag.Title</title>
+    <title>@Model.Title</title>
     <link href="~/Areas/Admin/Content/style.css" rel="stylesheet" />
     <link href="~/Areas/Admin/Content/style-responsive.css" rel="stylesheet" />
     @RenderSection("head", false)
@@ -34,7 +35,7 @@
 
 
             <div class="left-side-inner">
-                @Html.Action("Sidebar", "Layout", new { area = "Admin", activePageMenu = ViewBag.ActivePageMenu, activeMenu = ViewBag.ActiveMenu })
+                @Html.Action("Sidebar", "Layout", new { area = "Admin", activePageMenu = Model.ActivePageMenuName, activeMenu = Model.ActiveMenuName })
             </div>
         </div>
         <!-- left side end-->
@@ -49,7 +50,7 @@
                 <!--toggle button end-->
 
                 <!--page menu start -->
-                    @Html.Action("PageMenu", "Layout", new { area = "Admin", activePageMenu = ViewBag.ActivePageMenu })
+                    @Html.Action("PageMenu", "Layout", new { area = "Admin", activePageMenu = Model.ActivePageMenuName })
                 <!--page menu end -->
 
 

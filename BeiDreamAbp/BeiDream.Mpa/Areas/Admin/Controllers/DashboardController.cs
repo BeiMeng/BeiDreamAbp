@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Abp.Web.Mvc.Controllers;
+using BeiDream.Mpa.Areas.Admin.Models.Layout;
 
 namespace BeiDream.Mpa.Areas.Admin.Controllers
 {
@@ -12,9 +13,11 @@ namespace BeiDream.Mpa.Areas.Admin.Controllers
         // GET: Admin/Index
         public ActionResult Index(string activePageMenu)
         {
-            ViewBag.Title = "主页";
-            ViewBag.ActivePageMenu = activePageMenu;
-            return View();
+            return View(new CommonParamsViewModel()
+            {
+                Title = "主页",
+                ActivePageMenuName=activePageMenu
+            });
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Abp.Web.Mvc.Controllers;
+using BeiDream.Mpa.Areas.Admin.Models.Layout;
 
 namespace BeiDream.Mpa.Areas.MenuReply.Controllers
 {
@@ -12,9 +13,12 @@ namespace BeiDream.Mpa.Areas.MenuReply.Controllers
         // GET: MenuReply/ReplySetting
         public ActionResult Index()
         {
-            ViewBag.ActivePageMenu = "MenuReply";
-            ViewBag.ActiveMenu = "ReplySetting";
-            return View();
+            return View(new CommonParamsViewModel()
+            {
+                Title = "回复设置",
+                ActivePageMenuName = "MenuReply",
+                ActiveMenuName = "ReplySetting"
+            });
         }
     }
 }
