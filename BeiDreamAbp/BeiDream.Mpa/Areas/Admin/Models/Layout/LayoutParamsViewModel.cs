@@ -1,6 +1,6 @@
 ﻿namespace BeiDream.Mpa.Areas.Admin.Models.Layout
 {
-    public class CommonParamsViewModel
+    public class LayoutParamsViewModel
     {
         public string Title { get; set; }
         public string ActivePageMenuName { get; set; }

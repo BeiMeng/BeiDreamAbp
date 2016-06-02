@@ -8,16 +8,14 @@ using BeiDream.Mpa.Areas.Admin.Models.Layout;
 
 namespace BeiDream.Mpa.Areas.Admin.Controllers
 {
-    public class DashboardController : AbpController
+    public class DashboardController : AdminController
     {
         // GET: Admin/Index
         public ActionResult Index(string activePageMenu)
         {
-            return View(new CommonParamsViewModel()
-            {
-                Title = "主页",
-                ActivePageMenuName=activePageMenu
-            });
+            LayoutParamsViewModel.Title = "主页";
+            LayoutParamsViewModel.ActivePageMenuName = activePageMenu;
+            return View(LayoutParamsViewModel);
         }
     }
 }

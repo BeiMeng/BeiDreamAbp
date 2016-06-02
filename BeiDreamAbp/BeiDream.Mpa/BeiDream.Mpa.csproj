@@ -203,10 +203,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
-    <Compile Include="Areas\Admin\Models\Layout\CommonParamsViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\LayoutParamsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\NotificationMenuViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\PageMenuViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\SidebarViewModel.cs" />
