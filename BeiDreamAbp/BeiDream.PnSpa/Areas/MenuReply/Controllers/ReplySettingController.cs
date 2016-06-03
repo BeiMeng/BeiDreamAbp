@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using Abp.Web.Mvc.Controllers;
 
-namespace BeiDream.PnSpa.Areas.Admin.Controllers
+namespace BeiDream.PnSpa.Areas.MenuReply.Controllers
 {
-    public class DashboardController : AbpController
+    public class ReplySettingController : AbpController
     {
-        // GET: Admin/Dashboard
+        // GET: MenuReply/ReplySetting
         public ActionResult Index()
         {
             return View();

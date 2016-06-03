@@ -17,7 +17,7 @@ namespace BeiDream.PnSpa.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { controller = "Layout", action = "Index", id = UrlParameter.Optional }
+                new { controller = "Layout", action = "AdminLayout", id = UrlParameter.Optional }
             );
         }
     }

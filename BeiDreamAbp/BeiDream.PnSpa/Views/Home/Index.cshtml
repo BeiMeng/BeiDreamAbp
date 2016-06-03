@@ -1,6 +1,4 @@
-﻿@model dynamic
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -8,11 +6,12 @@
 
 <html>
 <head>
-    <title>title</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-<div>
-      PnSpa
-</div>
+    <div>
+        @ViewBag.Title    PnSpa
+    </div>
 </body>
 </html>

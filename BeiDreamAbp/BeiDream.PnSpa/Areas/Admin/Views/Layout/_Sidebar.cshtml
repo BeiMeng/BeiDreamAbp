@@ -1,0 +1,90 @@
+﻿@model BeiDream.PnSpa.Areas.Admin.Models.Layout.SidebarViewModel
+@using Abp.Collections.Extensions
+
+
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="nav-close">
+        <i class="fa fa-times-circle"></i>
+    </div>
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span><img alt="image" class="img-circle" src="~/Areas/Admin/images/profile_small.jpg" /></span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                                <span class="block m-t-xs"><strong class="font-bold">Beaut-zihan</strong></span>
+                                <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li>
+                            <a class="J_menuItem" href="form_avatar.html">修改头像</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="profile.html">个人资料</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="contacts.html">联系我们</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="mailbox.html">信箱</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="login.html">安全退出</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    H+
+                </div>
+            </li>
+
+
+            @foreach (var menuItem in Model.Menu.Items)
+            {
+                if (menuItem.Items.IsNullOrEmpty())
+                {
+                    <li>
+                        <a class="J_menuItem" href="@menuItem.Url">
+                            @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+                            {
+                                <i class="@menuItem.Icon"></i>
+                            }
+                            <span>@menuItem.DisplayName</span>
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="#">
+                            @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+                            {
+                                <i class="@menuItem.Icon"></i>
+                            }
+                            <span class="nav-label">@menuItem.DisplayName</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            @foreach (var subMenuItem in menuItem.Items)
+                            {
+                                <li>
+                                    <a class="J_menuItem" href="@subMenuItem.Url">
+                                        @if (!string.IsNullOrWhiteSpace(subMenuItem.Icon))
+                                        {
+                                            <i class="@subMenuItem.Icon"></i>
+                                        }
+                                        @subMenuItem.DisplayName
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</nav>

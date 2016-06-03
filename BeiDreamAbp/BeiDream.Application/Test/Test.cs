@@ -4,7 +4,7 @@
     {
         public string SayHello(string words)
         {
-            return "this is My:" + words;
+            return "BeiDream创建的:" + words;
         }
     }
 }

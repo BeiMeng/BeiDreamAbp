@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using Abp.Application.Services;
 using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
+using Abp.WebApi.Controllers.Dynamic.Builders;
+using BeiDream.Application;
 using Swashbuckle.Application;
 
 namespace BeiDream.WebApi
@@ -21,14 +24,20 @@ namespace BeiDream.WebApi
         }
         private void ConfigureSwaggerUi()
         {
-            var thisAssembly = typeof(WebApiModule).Assembly;
+            //应用服务层动态webapi方法的创建(app为生成的动态webapi的前缀名)
+            DynamicApiControllerBuilder.ForAll<IApplicationService>(typeof(ApplicationModule).Assembly, "app").Build();
+
+            var webApiAssembly = typeof(WebApiModule).Assembly;
+            var applicationAssembly = typeof(ApplicationModule).Assembly;
             Configuration.Modules.AbpWebApi().HttpConfiguration
                 .EnableSwagger(c =>
                 {
                     c.SingleApiVersion("v1", "BeiDream.WebApi");
                     c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
-                    //显示注释文档配置
-                    c.IncludeXmlComments(GetXmlCommentsPath(thisAssembly.GetName().Name));
+                    //显示手动添加的webapi注释文档配置
+                    c.IncludeXmlComments(GetXmlCommentsPath(webApiAssembly.GetName().Name));
+                    //动态生成的webapi的注释必须写着接口上,才能在SwaggerUi界面上显示出来
+                    c.IncludeXmlComments(GetXmlCommentsPath(applicationAssembly.GetName().Name));
                 })
                 .EnableSwaggerUi();
         }

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Net;
+using System.Web.Http;
 using System.Web.Mvc;
 using Abp.Web.Mvc.Controllers;
 
-namespace BeiDream.PnSpa.Areas.Admin.Controllers
+namespace BeiDream.PnSpa.Areas.MicroSite.Controllers
 {
-    public class DashboardController : AbpController
+    public class ArticleController : AbpController
     {
-        // GET: Admin/Dashboard
         public ActionResult Index()
         {
             return View();

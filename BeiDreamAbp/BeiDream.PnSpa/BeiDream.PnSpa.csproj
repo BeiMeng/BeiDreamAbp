@@ -38,7 +38,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.LoggingFacility.3.3.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core-log4net.3.3.3\lib\net45\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -48,6 +77,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -115,7 +152,7 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\AdminMaster.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\fonts\fontawesome-webfont93e3.eot" />
     <Content Include="Areas\Admin\fonts\fontawesome-webfont93e3.ttf" />
@@ -127,8 +164,24 @@
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regulard41d.eot" />
-    <Content Include="Areas\Admin\Views\Layout\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="log4net.config" />
+    <Content Include="Areas\Admin\Views\Layout\_PageMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_Sidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_NotificationMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_RightSidebar.cshtml" />
+    <Content Include="Areas\MenuReply\Views\web.config" />
+    <Content Include="Areas\MicroSite\Views\web.config" />
+    <Content Include="Areas\SysManage\Views\web.config" />
+    <Content Include="Areas\MenuReply\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\MenuReply\Views\MenuSetting\Index.cshtml" />
+    <Content Include="Areas\MenuReply\Views\ReplySetting\Index.cshtml" />
+    <Content Include="Areas\MicroSite\Views\Article\Index.cshtml" />
+    <Content Include="Areas\MicroSite\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SysManage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SysManage\Views\User\Index.cshtml" />
+    <Content Include="Areas\SysManage\Views\Role\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -137,10 +190,25 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BeiDreamNavigationProvider.cs" />
+    <Compile Include="App_Start\PnSpaWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\NotificationMenuViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\PageMenuViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\RightSidebarViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\SidebarViewModel.cs" />
+    <Compile Include="Areas\MenuReply\Controllers\MenuSettingController.cs" />
+    <Compile Include="Areas\MenuReply\Controllers\ReplySettingController.cs" />
+    <Compile Include="Areas\MenuReply\MenuReplyAreaRegistration.cs" />
+    <Compile Include="Areas\MicroSite\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\MicroSite\MicroSiteAreaRegistration.cs" />
+    <Compile Include="Areas\SysManage\Controllers\RoleController.cs" />
+    <Compile Include="Areas\SysManage\Controllers\UserController.cs" />
+    <Compile Include="Areas\SysManage\SysManageAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -161,8 +229,31 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\MenuReply\Models\" />
+    <Folder Include="Areas\MenuReply\Views\Shared\" />
+    <Folder Include="Areas\MicroSite\Models\" />
+    <Folder Include="Areas\MicroSite\Views\Shared\" />
+    <Folder Include="Areas\SysManage\Models\" />
+    <Folder Include="Areas\SysManage\Views\Shared\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Abp\Abp.Web.Mvc\Abp.Web.Mvc.csproj">
+      <Project>{78fc0c9b-c5a9-4900-9a46-a8f544ac5343}</Project>
+      <Name>Abp.Web.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Abp\Abp.Web\Abp.Web.csproj">
+      <Project>{d37c09d8-2f18-4f0b-a4d3-7a12c124e070}</Project>
+      <Name>Abp.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Abp\Abp\Abp.csproj">
+      <Project>{2c221d3b-5f54-4c5b-8082-318636415132}</Project>
+      <Name>Abp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeiDream.Application\BeiDream.Application.csproj">
+      <Project>{cb3499d2-4008-44e6-b84a-f29cddbdd80e}</Project>
+      <Name>BeiDream.Application</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

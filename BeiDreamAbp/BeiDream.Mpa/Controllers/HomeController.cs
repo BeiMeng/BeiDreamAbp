@@ -22,7 +22,7 @@ namespace BeiDream.Mpa.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.Title = _test.SayHello("啊 哈哈哈");
+            ViewBag.Title = _test.SayHello("Mpa后台框架");
             return View();
         }
     }
