@@ -254,6 +254,10 @@
       <Project>{cb3499d2-4008-44e6-b84a-f29cddbdd80e}</Project>
       <Name>BeiDream.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BeiDream.WebApi\BeiDream.WebApi.csproj">
+      <Project>{96629897-2e87-4d94-b50a-62c1643a8b7d}</Project>
+      <Name>BeiDream.WebApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
