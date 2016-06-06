@@ -20,13 +20,12 @@ namespace BeiDream.WebApi
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            //应用服务层动态webapi方法的创建(app为生成的动态webapi的前缀名)
+            DynamicApiControllerBuilder.ForAll<IApplicationService>(typeof(ApplicationModule).Assembly, "app").Build();
             ConfigureSwaggerUi();
         }
         private void ConfigureSwaggerUi()
         {
-            //应用服务层动态webapi方法的创建(app为生成的动态webapi的前缀名)
-            DynamicApiControllerBuilder.ForAll<IApplicationService>(typeof(ApplicationModule).Assembly, "app").Build();
-
             var webApiAssembly = typeof(WebApiModule).Assembly;
             var applicationAssembly = typeof(ApplicationModule).Assembly;
             Configuration.Modules.AbpWebApi().HttpConfiguration
