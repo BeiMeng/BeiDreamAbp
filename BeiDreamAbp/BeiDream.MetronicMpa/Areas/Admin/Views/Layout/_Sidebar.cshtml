@@ -1,0 +1,40 @@
+﻿@model BeiDream.MetronicMpa.Areas.Admin.Models.Layout.SidebarViewModel
+@using Abp.Application.Navigation
+@using Abp.Collections.Extensions
+@helper GetOneLinkHtml(UserMenuItem menuItem)
+{
+    <li class="nav-item @(menuItem.Name==Model.ActiveMenuName?"active open":"")">
+        <a href="@menuItem.Url" class="nav-link ">
+            @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+            {
+                <i class="@menuItem.Icon"></i>
+            }
+            <span class="title">@menuItem.DisplayName</span>
+        </a>
+    </li>
+}
+@helper GetManyLinkHtml(UserMenuItem menuItem)
+{
+    <li class="nav-item @(menuItem.Items.SingleOrDefault(p => p.Name == Model.ActiveMenuName) == null ? "" : "active open")">
+        <a href="javascript:;" class="nav-link nav-toggle">
+            @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+            {
+                <i class="@menuItem.Icon"></i>
+            }
+            <span class="title">@menuItem.DisplayName</span>
+            <span class="arrow"></span>
+        </a>
+        <ul class="sub-menu">
+            @foreach (var subMenuItem in menuItem.Items)
+            {
+                @(subMenuItem.Items.IsNullOrEmpty() ? GetOneLinkHtml(subMenuItem) : GetManyLinkHtml(subMenuItem))
+            }
+        </ul>
+    </li>
+}
+<ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+    @foreach (var menuItem in Model.Menu.Items)
+    {
+        @(menuItem.Items.IsNullOrEmpty() ? GetOneLinkHtml(menuItem) : GetManyLinkHtml(menuItem))
+    }
+</ul>

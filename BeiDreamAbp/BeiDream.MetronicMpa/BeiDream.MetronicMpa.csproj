@@ -1,0 +1,892 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D996807F-9E04-40CD-8851-C86BCDBEBC8D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeiDream.MetronicMpa</RootNamespace>
+    <AssemblyName>BeiDream.MetronicMpa</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.LoggingFacility.3.3.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core-log4net.3.3.3\lib\net45\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="metronic\assets\global\css\components-md.css" />
+    <Content Include="metronic\assets\global\css\components-md.min.css" />
+    <Content Include="metronic\assets\global\css\components-rounded.css" />
+    <Content Include="metronic\assets\global\css\components-rounded.min.css" />
+    <Content Include="metronic\assets\global\css\components.css" />
+    <Content Include="metronic\assets\global\css\components.min.css" />
+    <Content Include="metronic\assets\global\css\plugins-md.css" />
+    <Content Include="metronic\assets\global\css\plugins-md.min.css" />
+    <Content Include="metronic\assets\global\css\plugins.css" />
+    <Content Include="metronic\assets\global\css\plugins.min.css" />
+    <Content Include="metronic\assets\global\img\accordion-plusminus.png" />
+    <Content Include="metronic\assets\global\img\ajax-loading.gif" />
+    <Content Include="metronic\assets\global\img\ajax-modal-loading.gif" />
+    <Content Include="metronic\assets\global\img\datatable-row-openclose.png" />
+    <Content Include="metronic\assets\global\img\flags\ad.png" />
+    <Content Include="metronic\assets\global\img\flags\ae.png" />
+    <Content Include="metronic\assets\global\img\flags\af.png" />
+    <Content Include="metronic\assets\global\img\flags\ag.png" />
+    <Content Include="metronic\assets\global\img\flags\ai.png" />
+    <Content Include="metronic\assets\global\img\flags\al.png" />
+    <Content Include="metronic\assets\global\img\flags\am.png" />
+    <Content Include="metronic\assets\global\img\flags\an.png" />
+    <Content Include="metronic\assets\global\img\flags\ao.png" />
+    <Content Include="metronic\assets\global\img\flags\ar.png" />
+    <Content Include="metronic\assets\global\img\flags\as.png" />
+    <Content Include="metronic\assets\global\img\flags\at.png" />
+    <Content Include="metronic\assets\global\img\flags\au.png" />
+    <Content Include="metronic\assets\global\img\flags\aw.png" />
+    <Content Include="metronic\assets\global\img\flags\ax.png" />
+    <Content Include="metronic\assets\global\img\flags\az.png" />
+    <Content Include="metronic\assets\global\img\flags\ba.png" />
+    <Content Include="metronic\assets\global\img\flags\bb.png" />
+    <Content Include="metronic\assets\global\img\flags\bd.png" />
+    <Content Include="metronic\assets\global\img\flags\be.png" />
+    <Content Include="metronic\assets\global\img\flags\bf.png" />
+    <Content Include="metronic\assets\global\img\flags\bg.png" />
+    <Content Include="metronic\assets\global\img\flags\bh.png" />
+    <Content Include="metronic\assets\global\img\flags\bi.png" />
+    <Content Include="metronic\assets\global\img\flags\bj.png" />
+    <Content Include="metronic\assets\global\img\flags\bm.png" />
+    <Content Include="metronic\assets\global\img\flags\bn.png" />
+    <Content Include="metronic\assets\global\img\flags\bo.png" />
+    <Content Include="metronic\assets\global\img\flags\br.png" />
+    <Content Include="metronic\assets\global\img\flags\bs.png" />
+    <Content Include="metronic\assets\global\img\flags\bt.png" />
+    <Content Include="metronic\assets\global\img\flags\bv.png" />
+    <Content Include="metronic\assets\global\img\flags\bw.png" />
+    <Content Include="metronic\assets\global\img\flags\by.png" />
+    <Content Include="metronic\assets\global\img\flags\bz.png" />
+    <Content Include="metronic\assets\global\img\flags\ca.png" />
+    <Content Include="metronic\assets\global\img\flags\catalonia.png" />
+    <Content Include="metronic\assets\global\img\flags\cc.png" />
+    <Content Include="metronic\assets\global\img\flags\cd.png" />
+    <Content Include="metronic\assets\global\img\flags\cf.png" />
+    <Content Include="metronic\assets\global\img\flags\cg.png" />
+    <Content Include="metronic\assets\global\img\flags\ch.png" />
+    <Content Include="metronic\assets\global\img\flags\ci.png" />
+    <Content Include="metronic\assets\global\img\flags\ck.png" />
+    <Content Include="metronic\assets\global\img\flags\cl.png" />
+    <Content Include="metronic\assets\global\img\flags\cm.png" />
+    <Content Include="metronic\assets\global\img\flags\cn.png" />
+    <Content Include="metronic\assets\global\img\flags\co.png" />
+    <Content Include="metronic\assets\global\img\flags\cr.png" />
+    <Content Include="metronic\assets\global\img\flags\cs.png" />
+    <Content Include="metronic\assets\global\img\flags\cu.png" />
+    <Content Include="metronic\assets\global\img\flags\cv.png" />
+    <Content Include="metronic\assets\global\img\flags\cx.png" />
+    <Content Include="metronic\assets\global\img\flags\cy.png" />
+    <Content Include="metronic\assets\global\img\flags\cz.png" />
+    <Content Include="metronic\assets\global\img\flags\de.png" />
+    <Content Include="metronic\assets\global\img\flags\dj.png" />
+    <Content Include="metronic\assets\global\img\flags\dk.png" />
+    <Content Include="metronic\assets\global\img\flags\dm.png" />
+    <Content Include="metronic\assets\global\img\flags\do.png" />
+    <Content Include="metronic\assets\global\img\flags\dz.png" />
+    <Content Include="metronic\assets\global\img\flags\ec.png" />
+    <Content Include="metronic\assets\global\img\flags\ee.png" />
+    <Content Include="metronic\assets\global\img\flags\eg.png" />
+    <Content Include="metronic\assets\global\img\flags\eh.png" />
+    <Content Include="metronic\assets\global\img\flags\england.png" />
+    <Content Include="metronic\assets\global\img\flags\er.png" />
+    <Content Include="metronic\assets\global\img\flags\es.png" />
+    <Content Include="metronic\assets\global\img\flags\et.png" />
+    <Content Include="metronic\assets\global\img\flags\europeanunion.png" />
+    <Content Include="metronic\assets\global\img\flags\fam.png" />
+    <Content Include="metronic\assets\global\img\flags\fi.png" />
+    <Content Include="metronic\assets\global\img\flags\fj.png" />
+    <Content Include="metronic\assets\global\img\flags\fk.png" />
+    <Content Include="metronic\assets\global\img\flags\fm.png" />
+    <Content Include="metronic\assets\global\img\flags\fo.png" />
+    <Content Include="metronic\assets\global\img\flags\fr.png" />
+    <Content Include="metronic\assets\global\img\flags\ga.png" />
+    <Content Include="metronic\assets\global\img\flags\gb.png" />
+    <Content Include="metronic\assets\global\img\flags\gd.png" />
+    <Content Include="metronic\assets\global\img\flags\ge.png" />
+    <Content Include="metronic\assets\global\img\flags\gf.png" />
+    <Content Include="metronic\assets\global\img\flags\gh.png" />
+    <Content Include="metronic\assets\global\img\flags\gi.png" />
+    <Content Include="metronic\assets\global\img\flags\gl.png" />
+    <Content Include="metronic\assets\global\img\flags\gm.png" />
+    <Content Include="metronic\assets\global\img\flags\gn.png" />
+    <Content Include="metronic\assets\global\img\flags\gp.png" />
+    <Content Include="metronic\assets\global\img\flags\gq.png" />
+    <Content Include="metronic\assets\global\img\flags\gr.png" />
+    <Content Include="metronic\assets\global\img\flags\gs.png" />
+    <Content Include="metronic\assets\global\img\flags\gt.png" />
+    <Content Include="metronic\assets\global\img\flags\gu.png" />
+    <Content Include="metronic\assets\global\img\flags\gw.png" />
+    <Content Include="metronic\assets\global\img\flags\gy.png" />
+    <Content Include="metronic\assets\global\img\flags\hk.png" />
+    <Content Include="metronic\assets\global\img\flags\hm.png" />
+    <Content Include="metronic\assets\global\img\flags\hn.png" />
+    <Content Include="metronic\assets\global\img\flags\hr.png" />
+    <Content Include="metronic\assets\global\img\flags\ht.png" />
+    <Content Include="metronic\assets\global\img\flags\hu.png" />
+    <Content Include="metronic\assets\global\img\flags\id.png" />
+    <Content Include="metronic\assets\global\img\flags\ie.png" />
+    <Content Include="metronic\assets\global\img\flags\il.png" />
+    <Content Include="metronic\assets\global\img\flags\in.png" />
+    <Content Include="metronic\assets\global\img\flags\io.png" />
+    <Content Include="metronic\assets\global\img\flags\iq.png" />
+    <Content Include="metronic\assets\global\img\flags\ir.png" />
+    <Content Include="metronic\assets\global\img\flags\is.png" />
+    <Content Include="metronic\assets\global\img\flags\it.png" />
+    <Content Include="metronic\assets\global\img\flags\jm.png" />
+    <Content Include="metronic\assets\global\img\flags\jo.png" />
+    <Content Include="metronic\assets\global\img\flags\jp.png" />
+    <Content Include="metronic\assets\global\img\flags\ke.png" />
+    <Content Include="metronic\assets\global\img\flags\kg.png" />
+    <Content Include="metronic\assets\global\img\flags\kh.png" />
+    <Content Include="metronic\assets\global\img\flags\ki.png" />
+    <Content Include="metronic\assets\global\img\flags\km.png" />
+    <Content Include="metronic\assets\global\img\flags\kn.png" />
+    <Content Include="metronic\assets\global\img\flags\kp.png" />
+    <Content Include="metronic\assets\global\img\flags\kr.png" />
+    <Content Include="metronic\assets\global\img\flags\kw.png" />
+    <Content Include="metronic\assets\global\img\flags\ky.png" />
+    <Content Include="metronic\assets\global\img\flags\kz.png" />
+    <Content Include="metronic\assets\global\img\flags\la.png" />
+    <Content Include="metronic\assets\global\img\flags\lb.png" />
+    <Content Include="metronic\assets\global\img\flags\lc.png" />
+    <Content Include="metronic\assets\global\img\flags\li.png" />
+    <Content Include="metronic\assets\global\img\flags\lk.png" />
+    <Content Include="metronic\assets\global\img\flags\lr.png" />
+    <Content Include="metronic\assets\global\img\flags\ls.png" />
+    <Content Include="metronic\assets\global\img\flags\lt.png" />
+    <Content Include="metronic\assets\global\img\flags\lu.png" />
+    <Content Include="metronic\assets\global\img\flags\lv.png" />
+    <Content Include="metronic\assets\global\img\flags\ly.png" />
+    <Content Include="metronic\assets\global\img\flags\ma.png" />
+    <Content Include="metronic\assets\global\img\flags\mc.png" />
+    <Content Include="metronic\assets\global\img\flags\md.png" />
+    <Content Include="metronic\assets\global\img\flags\me.png" />
+    <Content Include="metronic\assets\global\img\flags\mg.png" />
+    <Content Include="metronic\assets\global\img\flags\mh.png" />
+    <Content Include="metronic\assets\global\img\flags\mk.png" />
+    <Content Include="metronic\assets\global\img\flags\ml.png" />
+    <Content Include="metronic\assets\global\img\flags\mm.png" />
+    <Content Include="metronic\assets\global\img\flags\mn.png" />
+    <Content Include="metronic\assets\global\img\flags\mo.png" />
+    <Content Include="metronic\assets\global\img\flags\mp.png" />
+    <Content Include="metronic\assets\global\img\flags\mq.png" />
+    <Content Include="metronic\assets\global\img\flags\mr.png" />
+    <Content Include="metronic\assets\global\img\flags\ms.png" />
+    <Content Include="metronic\assets\global\img\flags\mt.png" />
+    <Content Include="metronic\assets\global\img\flags\mu.png" />
+    <Content Include="metronic\assets\global\img\flags\mv.png" />
+    <Content Include="metronic\assets\global\img\flags\mw.png" />
+    <Content Include="metronic\assets\global\img\flags\mx.png" />
+    <Content Include="metronic\assets\global\img\flags\my.png" />
+    <Content Include="metronic\assets\global\img\flags\mz.png" />
+    <Content Include="metronic\assets\global\img\flags\na.png" />
+    <Content Include="metronic\assets\global\img\flags\nc.png" />
+    <Content Include="metronic\assets\global\img\flags\ne.png" />
+    <Content Include="metronic\assets\global\img\flags\nf.png" />
+    <Content Include="metronic\assets\global\img\flags\ng.png" />
+    <Content Include="metronic\assets\global\img\flags\ni.png" />
+    <Content Include="metronic\assets\global\img\flags\nl.png" />
+    <Content Include="metronic\assets\global\img\flags\no.png" />
+    <Content Include="metronic\assets\global\img\flags\np.png" />
+    <Content Include="metronic\assets\global\img\flags\nr.png" />
+    <Content Include="metronic\assets\global\img\flags\nu.png" />
+    <Content Include="metronic\assets\global\img\flags\nz.png" />
+    <Content Include="metronic\assets\global\img\flags\om.png" />
+    <Content Include="metronic\assets\global\img\flags\pa.png" />
+    <Content Include="metronic\assets\global\img\flags\pe.png" />
+    <Content Include="metronic\assets\global\img\flags\pf.png" />
+    <Content Include="metronic\assets\global\img\flags\pg.png" />
+    <Content Include="metronic\assets\global\img\flags\ph.png" />
+    <Content Include="metronic\assets\global\img\flags\pk.png" />
+    <Content Include="metronic\assets\global\img\flags\pl.png" />
+    <Content Include="metronic\assets\global\img\flags\pm.png" />
+    <Content Include="metronic\assets\global\img\flags\pn.png" />
+    <Content Include="metronic\assets\global\img\flags\pr.png" />
+    <Content Include="metronic\assets\global\img\flags\ps.png" />
+    <Content Include="metronic\assets\global\img\flags\pt.png" />
+    <Content Include="metronic\assets\global\img\flags\pw.png" />
+    <Content Include="metronic\assets\global\img\flags\py.png" />
+    <Content Include="metronic\assets\global\img\flags\qa.png" />
+    <Content Include="metronic\assets\global\img\flags\re.png" />
+    <Content Include="metronic\assets\global\img\flags\readme.txt" />
+    <Content Include="metronic\assets\global\img\flags\ro.png" />
+    <Content Include="metronic\assets\global\img\flags\rs.png" />
+    <Content Include="metronic\assets\global\img\flags\ru.png" />
+    <Content Include="metronic\assets\global\img\flags\rw.png" />
+    <Content Include="metronic\assets\global\img\flags\sa.png" />
+    <Content Include="metronic\assets\global\img\flags\sb.png" />
+    <Content Include="metronic\assets\global\img\flags\sc.png" />
+    <Content Include="metronic\assets\global\img\flags\scotland.png" />
+    <Content Include="metronic\assets\global\img\flags\sd.png" />
+    <Content Include="metronic\assets\global\img\flags\se.png" />
+    <Content Include="metronic\assets\global\img\flags\sg.png" />
+    <Content Include="metronic\assets\global\img\flags\sh.png" />
+    <Content Include="metronic\assets\global\img\flags\si.png" />
+    <Content Include="metronic\assets\global\img\flags\sj.png" />
+    <Content Include="metronic\assets\global\img\flags\sk.png" />
+    <Content Include="metronic\assets\global\img\flags\sl.png" />
+    <Content Include="metronic\assets\global\img\flags\sm.png" />
+    <Content Include="metronic\assets\global\img\flags\sn.png" />
+    <Content Include="metronic\assets\global\img\flags\so.png" />
+    <Content Include="metronic\assets\global\img\flags\sr.png" />
+    <Content Include="metronic\assets\global\img\flags\st.png" />
+    <Content Include="metronic\assets\global\img\flags\sv.png" />
+    <Content Include="metronic\assets\global\img\flags\sy.png" />
+    <Content Include="metronic\assets\global\img\flags\sz.png" />
+    <Content Include="metronic\assets\global\img\flags\tc.png" />
+    <Content Include="metronic\assets\global\img\flags\td.png" />
+    <Content Include="metronic\assets\global\img\flags\tf.png" />
+    <Content Include="metronic\assets\global\img\flags\tg.png" />
+    <Content Include="metronic\assets\global\img\flags\th.png" />
+    <Content Include="metronic\assets\global\img\flags\tj.png" />
+    <Content Include="metronic\assets\global\img\flags\tk.png" />
+    <Content Include="metronic\assets\global\img\flags\tl.png" />
+    <Content Include="metronic\assets\global\img\flags\tm.png" />
+    <Content Include="metronic\assets\global\img\flags\tn.png" />
+    <Content Include="metronic\assets\global\img\flags\to.png" />
+    <Content Include="metronic\assets\global\img\flags\tr.png" />
+    <Content Include="metronic\assets\global\img\flags\tt.png" />
+    <Content Include="metronic\assets\global\img\flags\tv.png" />
+    <Content Include="metronic\assets\global\img\flags\tw.png" />
+    <Content Include="metronic\assets\global\img\flags\tz.png" />
+    <Content Include="metronic\assets\global\img\flags\ua.png" />
+    <Content Include="metronic\assets\global\img\flags\ug.png" />
+    <Content Include="metronic\assets\global\img\flags\um.png" />
+    <Content Include="metronic\assets\global\img\flags\us.png" />
+    <Content Include="metronic\assets\global\img\flags\uy.png" />
+    <Content Include="metronic\assets\global\img\flags\uz.png" />
+    <Content Include="metronic\assets\global\img\flags\va.png" />
+    <Content Include="metronic\assets\global\img\flags\vc.png" />
+    <Content Include="metronic\assets\global\img\flags\ve.png" />
+    <Content Include="metronic\assets\global\img\flags\vg.png" />
+    <Content Include="metronic\assets\global\img\flags\vi.png" />
+    <Content Include="metronic\assets\global\img\flags\vn.png" />
+    <Content Include="metronic\assets\global\img\flags\vu.png" />
+    <Content Include="metronic\assets\global\img\flags\wales.png" />
+    <Content Include="metronic\assets\global\img\flags\wf.png" />
+    <Content Include="metronic\assets\global\img\flags\ws.png" />
+    <Content Include="metronic\assets\global\img\flags\ye.png" />
+    <Content Include="metronic\assets\global\img\flags\yt.png" />
+    <Content Include="metronic\assets\global\img\flags\za.png" />
+    <Content Include="metronic\assets\global\img\flags\zm.png" />
+    <Content Include="metronic\assets\global\img\flags\zw.png" />
+    <Content Include="metronic\assets\global\img\input-spinner.gif" />
+    <Content Include="metronic\assets\global\img\loading-spinner-blue.gif" />
+    <Content Include="metronic\assets\global\img\loading-spinner-default.gif" />
+    <Content Include="metronic\assets\global\img\loading-spinner-grey.gif" />
+    <Content Include="metronic\assets\global\img\loading.gif" />
+    <Content Include="metronic\assets\global\img\overlay-icon.png" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\01.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\02.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\03.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\04.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\05.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\06.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\07.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\08.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\09.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\1.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\10.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\11.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\12.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\13.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\14.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\15.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\16.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\17.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\18.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\19.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\2.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\20.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\21.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\22.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\23.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\24.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\25.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\26.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\27.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\28.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\29.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\3.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\30.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\31.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\32.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\33.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\34.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\35.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\36.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\37.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\38.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\39.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\4.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\40.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\41.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\42.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\43.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\44.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\45.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\46.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\47.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\48.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\49.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\5.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\50.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\51.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\52.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\53.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\54.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\55.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\56.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\57.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\58.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\59.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\6.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\60.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\61.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\62.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\63.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\64.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\65.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\66.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\67.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\68.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\69.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\7.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\70.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\71.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\72.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\73.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\74.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\75.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\76.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\77.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\78.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\79.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\8.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\80.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\81.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\82.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\83.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\84.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\85.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\86.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\87.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\88.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\89.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\9.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\90.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\91.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\92.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\93.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\94.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\95.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\96.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\97.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\98.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\1200x900\99.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\400x300\1.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\400x300\2.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\400x300\3.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\01.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\010.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\011.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\012.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\013.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\014.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\015.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\016.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\017.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\02.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\03.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\04.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\05.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\06.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\07.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\08-long.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\08.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\09.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\1.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\10.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\100.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\101.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\102.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\103.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\11.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\12.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\13.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\14.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\15.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\16.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\17.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\18.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\19.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\2.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\20.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\21.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\22.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\23.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\24.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\25.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\26.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\27.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\28.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\29.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\3.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\30.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\31.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\32.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\33.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\34.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\35.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\36.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\37.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\38.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\39.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\4.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\40.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\41.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\42.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\43.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\44.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\45.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\46.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\47.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\48.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\49.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\5.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\50.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\51.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\52.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\53.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\54.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\55.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\56.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\57.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\58.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\59.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\6.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\60.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\61.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\62.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\63.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\64.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\65.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\66.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\67.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\68.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\69.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\7.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\70.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\71.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\72.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\73.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\74.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\75.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\76.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\77.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\78.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\79.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\8.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\80.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\81.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\82.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\83.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\84.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\85.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\86.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\87.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\88.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\89.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\9.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\90.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\91.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\92.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\93.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\94.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\95.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\96.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\97.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\98.jpg" />
+    <Content Include="metronic\assets\global\img\portfolio\600x600\99.jpg" />
+    <Content Include="metronic\assets\global\img\portlet-collapse-icon-white.png" />
+    <Content Include="metronic\assets\global\img\portlet-collapse-icon.png" />
+    <Content Include="metronic\assets\global\img\portlet-config-icon-white.png" />
+    <Content Include="metronic\assets\global\img\portlet-config-icon.png" />
+    <Content Include="metronic\assets\global\img\portlet-expand-icon-white.png" />
+    <Content Include="metronic\assets\global\img\portlet-expand-icon.png" />
+    <Content Include="metronic\assets\global\img\portlet-reload-icon-white.png" />
+    <Content Include="metronic\assets\global\img\portlet-reload-icon.png" />
+    <Content Include="metronic\assets\global\img\portlet-remove-icon-white.png" />
+    <Content Include="metronic\assets\global\img\portlet-remove-icon.png" />
+    <Content Include="metronic\assets\global\img\remove-icon-small.png" />
+    <Content Include="metronic\assets\global\img\social\aboutme.png" />
+    <Content Include="metronic\assets\global\img\social\amazon.png" />
+    <Content Include="metronic\assets\global\img\social\behance.png" />
+    <Content Include="metronic\assets\global\img\social\blogger.png" />
+    <Content Include="metronic\assets\global\img\social\deviantart.png" />
+    <Content Include="metronic\assets\global\img\social\dribbble.png" />
+    <Content Include="metronic\assets\global\img\social\dropbox.png" />
+    <Content Include="metronic\assets\global\img\social\evernote.png" />
+    <Content Include="metronic\assets\global\img\social\facebook.png" />
+    <Content Include="metronic\assets\global\img\social\flickr.png" />
+    <Content Include="metronic\assets\global\img\social\forrst.png" />
+    <Content Include="metronic\assets\global\img\social\foursquare.png" />
+    <Content Include="metronic\assets\global\img\social\github.png" />
+    <Content Include="metronic\assets\global\img\social\googleplus.png" />
+    <Content Include="metronic\assets\global\img\social\gravatar.png" />
+    <Content Include="metronic\assets\global\img\social\instagram.png" />
+    <Content Include="metronic\assets\global\img\social\jolicloud.png" />
+    <Content Include="metronic\assets\global\img\social\klout.png" />
+    <Content Include="metronic\assets\global\img\social\last-fm.png" />
+    <Content Include="metronic\assets\global\img\social\linkedin.png" />
+    <Content Include="metronic\assets\global\img\social\myspace.png" />
+    <Content Include="metronic\assets\global\img\social\picasa.png" />
+    <Content Include="metronic\assets\global\img\social\pintrest.png" />
+    <Content Include="metronic\assets\global\img\social\quora.png" />
+    <Content Include="metronic\assets\global\img\social\reddit.png" />
+    <Content Include="metronic\assets\global\img\social\rss.png" />
+    <Content Include="metronic\assets\global\img\social\skype.png" />
+    <Content Include="metronic\assets\global\img\social\spotify.png" />
+    <Content Include="metronic\assets\global\img\social\stumbleupon.png" />
+    <Content Include="metronic\assets\global\img\social\tumblr.png" />
+    <Content Include="metronic\assets\global\img\social\twitter.png" />
+    <Content Include="metronic\assets\global\img\social\vimeo.png" />
+    <Content Include="metronic\assets\global\img\social\vk.png" />
+    <Content Include="metronic\assets\global\img\social\wordpress.png" />
+    <Content Include="metronic\assets\global\img\social\xing.png" />
+    <Content Include="metronic\assets\global\img\social\yahoo.png" />
+    <Content Include="metronic\assets\global\img\social\youtube.png" />
+    <Content Include="metronic\assets\global\img\syncfusion-icons-white.png" />
+    <Content Include="metronic\assets\global\img\syncfusion-icons.png" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.js" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.min.js" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-switch\css\bootstrap-switch.css" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-switch\css\bootstrap-switch.min.css" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-switch\js\bootstrap-switch.js" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-switch\js\bootstrap-switch.min.js" />
+    <Content Include="metronic\assets\global\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="metronic\assets\global\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="metronic\assets\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="metronic\assets\global\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="metronic\assets\global\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="metronic\assets\global\plugins\excanvas.min.js" />
+    <Content Include="metronic\assets\global\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="metronic\assets\global\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="metronic\assets\global\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="metronic\assets\global\plugins\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="metronic\assets\global\plugins\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="metronic\assets\global\plugins\jquery.blockui.min.js" />
+    <Content Include="metronic\assets\global\plugins\jquery.min.js" />
+    <Content Include="metronic\assets\global\plugins\js.cookie.min.js" />
+    <Content Include="metronic\assets\global\plugins\respond.min.js" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\icons-lte-ie7.js" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\License.txt" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\Readme.txt" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\simple-line-icons.css" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="metronic\assets\global\scripts\app.js" />
+    <Content Include="metronic\assets\global\scripts\app.min.js" />
+    <Content Include="metronic\assets\global\scripts\datatable.js" />
+    <Content Include="metronic\assets\global\scripts\datatable.min.js" />
+    <Content Include="metronic\assets\layouts\global\scripts\quick-sidebar.js" />
+    <Content Include="metronic\assets\layouts\global\scripts\quick-sidebar.min.js" />
+    <Content Include="metronic\assets\layouts\layout2\css\custom.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\custom.min.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\layout.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\layout.min.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\blue.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\blue.min.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\dark.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\dark.min.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\default.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\default.min.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\grey.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\grey.min.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\light.css" />
+    <Content Include="metronic\assets\layouts\layout2\css\themes\light.min.css" />
+    <Content Include="metronic\assets\layouts\layout2\img\ajax-loading.gif" />
+    <Content Include="metronic\assets\layouts\layout2\img\ajax-modal-loading.gif" />
+    <Content Include="metronic\assets\layouts\layout2\img\arrow-down.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar1.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar10.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar11.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar1_small.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar2.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar3.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar3_small.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar4.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar5.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar6.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar7.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar8.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\avatar9.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\hor-menu-red-arrow.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\icon-color-close.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\icon-color.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\icon-img-down.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\icon-img-up.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\inbox-nav-arrow-blue.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\loading-spinner-blue.gif" />
+    <Content Include="metronic\assets\layouts\layout2\img\loading-spinner-default.gif" />
+    <Content Include="metronic\assets\layouts\layout2\img\loading-spinner-grey.gif" />
+    <Content Include="metronic\assets\layouts\layout2\img\loading.gif" />
+    <Content Include="metronic\assets\layouts\layout2\img\logo-big-white.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\logo-big.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\logo-default.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\logo.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\menu-toggler.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\photo1.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\photo2.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\remove-icon-small.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\search_icon_light.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar-menu-arrow-reverse.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar-menu-arrow-right.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar-menu-arrow.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar-toggler-inverse.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar-toggler.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_arrow_icon_light.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_arrow_icon_light_rtl.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_inline_toggler_icon_blue.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_inline_toggler_icon_darkblue.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_inline_toggler_icon_default.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_inline_toggler_icon_grey.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_inline_toggler_icon_light.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_inline_toggler_icon_light2.jpg" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_toggler_icon_blue.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_toggler_icon_darkblue.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_toggler_icon_default.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_toggler_icon_grey.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_toggler_icon_light.png" />
+    <Content Include="metronic\assets\layouts\layout2\img\sidebar_toggler_icon_light2.png" />
+    <Content Include="metronic\assets\layouts\layout2\scripts\demo.js" />
+    <Content Include="metronic\assets\layouts\layout2\scripts\demo.min.js" />
+    <Content Include="metronic\assets\layouts\layout2\scripts\layout.js" />
+    <Content Include="metronic\assets\layouts\layout2\scripts\layout.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BeiDreamNavigationProvider.cs" />
+    <Compile Include="App_Start\MetronicMpaWebModule.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\LayoutParamsViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\NotificationMenuViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\PageMenuViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Layout\SidebarViewModel.cs" />
+    <Compile Include="Areas\StudentsManage\Controllers\StudentRegisterController.cs" />
+    <Compile Include="Areas\StudentsManage\StudentsManageAreaRegistration.cs" />
+    <Compile Include="Areas\TeachingManage\TeachingManageAreaRegistration.cs" />
+    <Compile Include="Areas\WorkingManage\WorkingManageAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="log4net.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="metronic\assets\global\img\social\Thumbs.db" />
+    <Content Include="metronic\assets\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="metronic\assets\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="metronic\assets\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="metronic\assets\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="metronic\assets\global\plugins\jquery.min.map" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-hover-dropdown\LICENSE" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-hover-dropdown\README.md" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-switch\LICENSE" />
+    <Content Include="metronic\assets\global\plugins\bootstrap-switch\README.md" />
+    <Content Include="metronic\assets\global\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="metronic\assets\global\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="metronic\assets\global\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="metronic\assets\global\plugins\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="metronic\assets\global\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="metronic\assets\global\plugins\jquery-slimscroll\README.md" />
+    <Content Include="metronic\assets\global\plugins\jquery-slimscroll\slimScroll.jquery.json" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="metronic\assets\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Areas\TeachingManage\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_NotificationMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_PageMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_Sidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\_Footer.cshtml" />
+    <Content Include="Areas\StudentsManage\Views\web.config" />
+    <None Include="Areas\StudentsManage\Views\StudentRegister\Index.cshtml" />
+    <Content Include="Areas\StudentsManage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\WorkingManage\Views\web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\StudentsManage\Models\" />
+    <Folder Include="Areas\StudentsManage\Views\Shared\" />
+    <Folder Include="Areas\TeachingManage\Controllers\" />
+    <Folder Include="Areas\TeachingManage\Models\" />
+    <Folder Include="Areas\TeachingManage\Views\Shared\" />
+    <Folder Include="Areas\WorkingManage\Controllers\" />
+    <Folder Include="Areas\WorkingManage\Models\" />
+    <Folder Include="Areas\WorkingManage\Views\Shared\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Abp\Abp.Web.Mvc\Abp.Web.Mvc.csproj">
+      <Project>{78fc0c9b-c5a9-4900-9a46-a8f544ac5343}</Project>
+      <Name>Abp.Web.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Abp\Abp.Web\Abp.Web.csproj">
+      <Project>{d37c09d8-2f18-4f0b-a4d3-7a12c124e070}</Project>
+      <Name>Abp.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Abp\Abp\Abp.csproj">
+      <Project>{2c221d3b-5f54-4c5b-8082-318636415132}</Project>
+      <Name>Abp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeiDream.Application\BeiDream.Application.csproj">
+      <Project>{cb3499d2-4008-44e6-b84a-f29cddbdd80e}</Project>
+      <Name>BeiDream.Application</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3029</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3029/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
