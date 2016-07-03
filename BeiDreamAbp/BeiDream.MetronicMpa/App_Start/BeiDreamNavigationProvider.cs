@@ -529,7 +529,7 @@ namespace BeiDream.MetronicMpa
                     ).AddItem(new MenuItemDefinition(
                     "User",
                     L("用户管理"),
-                    url: "/SysManage/User",
+                    url: "/SysManage/Users",
                     icon: "fa fa-music",
                     requiresAuthentication: true
                     )).AddItem(new MenuItemDefinition(
@@ -574,9 +574,9 @@ namespace BeiDream.MetronicMpa
                     ))
                 ).AddItem(
                     new MenuItemDefinition(
-                        "About",
-                        L("系统管理三"),
-                        url: "/About",
+                        "ThemeSetting",
+                        L("主题设置"),
+                        url: "/SysManage/ThemeSetting",
                         icon: "fa fa-info",
                         requiresAuthentication: true
                         )

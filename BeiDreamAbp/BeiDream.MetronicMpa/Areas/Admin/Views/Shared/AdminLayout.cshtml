@@ -14,6 +14,7 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     <link href="~/metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/metronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="~/metronic/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -179,16 +180,18 @@
                     </div>
                 </div>
                 <!-- END THEME PANEL -->
+                    @RenderSection("PageTitle", false)
+                    @RenderSection("PageBar", false)
                     @RenderBody()
-            </div>
+</div>
             <!-- END CONTENT BODY -->
         </div>
         <!-- END CONTENT -->
     </div>
     <!-- END CONTAINER -->
     <!-- BEGIN FOOTER -->
-@Html.Action("Footer", "Layout", new { area = "Admin" })
-<!-- END FOOTER -->
+        @Html.Action("Footer", "Layout", new { area = "Admin" })
+    <!-- END FOOTER -->
     <!--[if lt IE 9]>
     <script src="~/metronic/assets/global/plugins/respond.min.js"></script>
     <script src="~/metronic/assets/global/plugins/excanvas.min.js"></script>

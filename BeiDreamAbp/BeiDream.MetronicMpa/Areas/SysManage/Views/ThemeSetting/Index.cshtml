@@ -1,0 +1,192 @@
+﻿@section head {
+    <link href="~/metronic/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" />
+    <link href="~/metronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" />
+}
+@section PageTitle {
+    <h3 class="page-title">
+        用户管理
+        <small>用户管理</small>
+    </h3>
+}
+@section PageBar {
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="icon-home"></i>
+                <a href="index.html">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Blank Page</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <span>Page Layouts</span>
+            </li>
+        </ul>
+    </div>
+}
+@section Scripts {
+    <script src="~/metronic/assets/global/plugins/datatables/datatables.min.js"></script>
+    <script src="~/metronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $('#sample_1');
+
+            // begin first table
+            table.dataTable({
+
+                // Internationalisation. For more info refer to http://datatables.net/manual/i18n
+                "language": {
+                    "aria": {
+                        "sortAscending": ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    },
+                    "emptyTable": "No data available in table",
+                    "info": "Showing _START_ to _END_ of _TOTAL_ records",
+                    "infoEmpty": "No records found",
+                    "infoFiltered": "(filtered1 from _MAX_ total records)",
+                    "lengthMenu": "Show _MENU_",
+                    "search": "Search:",
+                    "zeroRecords": "No matching records found",
+                    "paginate": {
+                        "previous": "Prev",
+                        "next": "Next",
+                        "last": "Last",
+                        "first": "First"
+                    }
+                },
+
+                // Or you can use remote translation file
+                //"language": {
+                //   url: '//cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Portuguese.json'
+                //},
+
+                // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
+                // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
+                // So when dropdowns used the scrollable div should be removed.
+                //"dom": "<'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
+
+                "bStateSave": true, // save datatable state(pagination, sort, etc) in cookie.
+
+                "columnDefs": [{
+                    "targets": 0,
+                    "orderable": false,
+                    "searchable": false
+                }],
+
+                "lengthMenu": [
+                    [5, 15, 20, -1],
+                    [5, 15, 20, "All"] // change per page values here
+                ],
+                // set the initial value
+                "pageLength": 5,
+                "pagingType": "bootstrap_full_number",
+                "columnDefs": [{  // set default column settings
+                    'orderable': false,
+                    'targets': [0]
+                }, {
+                    "searchable": false,
+                    "targets": [0]
+                }],
+                "order": [
+                    [1, "asc"]
+                ] // set first column as a default sort by asc
+            });
+        });
+    </script>
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Primary Panel</h3>
+    </div>
+    <div class="panel-body">
+        <div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="Click to open advance theme customizer panel">
+            <i class="icon-settings"></i>
+        </div>
+        <div class="toggler-close">
+            <i class="icon-close"></i>
+        </div>
+        <div class="theme-options">
+            <div class="theme-option theme-colors clearfix">
+                <span> THEME COLOR </span>
+                <ul>
+                    <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default"> </li>
+                    <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey"> </li>
+                    <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue"> </li>
+                    <li class="color-dark tooltips" data-style="dark" data-container="body" data-original-title="Dark"> </li>
+                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light"> </li>
+                </ul>
+            </div>
+            <div class="theme-option">
+                <span> Theme Style </span>
+                <select class="layout-style-option form-control input-small">
+                    <option value="square" selected="selected">Square corners</option>
+                    <option value="rounded">Rounded corners</option>
+                </select>
+            </div>
+            <div class="theme-option">
+                <span> Layout </span>
+                <select class="layout-option form-control input-small">
+                    <option value="fluid" selected="selected">Fluid</option>
+                    <option value="boxed">Boxed</option>
+                </select>
+            </div>
+            <div class="theme-option">
+                <span> Header </span>
+                <select class="page-header-option form-control input-small">
+                    <option value="fixed" selected="selected">Fixed</option>
+                    <option value="default">Default</option>
+                </select>
+            </div>
+            <div class="theme-option">
+                <span> Top Dropdown</span>
+                <select class="page-header-top-dropdown-style-option form-control input-small">
+                    <option value="light" selected="selected">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+            <div class="theme-option">
+                <span> Sidebar Mode</span>
+                <select class="sidebar-option form-control input-small">
+                    <option value="fixed">Fixed</option>
+                    <option value="default" selected="selected">Default</option>
+                </select>
+            </div>
+            <div class="theme-option">
+                <span> Sidebar Style</span>
+                <select class="sidebar-style-option form-control input-small">
+                    <option value="default" selected="selected">Default</option>
+                    <option value="compact">Compact</option>
+                </select>
+            </div>
+            <div class="theme-option">
+                <span> Sidebar Menu </span>
+                <select class="sidebar-menu-option form-control input-small">
+                    <option value="accordion" selected="selected">Accordion</option>
+                    <option value="hover">Hover</option>
+                </select>
+            </div>
+            <div class="theme-option">
+                <span> Sidebar Position </span>
+                <select class="sidebar-pos-option form-control input-small">
+                    <option value="left" selected="selected">Left</option>
+                    <option value="right">Right</option>
+                </select>
+            </div>
+            <div class="theme-option">
+                <span> Footer </span>
+                <select class="page-footer-option form-control input-small">
+                    <option value="fixed">Fixed</option>
+                    <option value="default" selected="selected">Default</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="theme-panel">
+
+</div>
+
+
