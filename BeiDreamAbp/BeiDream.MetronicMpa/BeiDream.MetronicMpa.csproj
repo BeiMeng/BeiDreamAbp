@@ -54,11 +54,28 @@
       <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,6 +85,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -101,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="metronic\assets\admin\css\layout.css" />
     <Content Include="metronic\assets\global\css\components-md.css" />
     <Content Include="metronic\assets\global\css\components-md.min.css" />
     <Content Include="metronic\assets\global\css\components-rounded.css" />
@@ -764,6 +790,7 @@
     <Compile Include="App_Start\BeiDreamNavigationProvider.cs" />
     <Compile Include="App_Start\MetronicMpaWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
@@ -840,6 +867,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Abp\Abp.Web.Api\Abp.Web.Api.csproj">
+      <Project>{71962f97-5e4b-465c-9a21-2153d31992cf}</Project>
+      <Name>Abp.Web.Api</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Abp\Abp.Web.Mvc\Abp.Web.Mvc.csproj">
       <Project>{78fc0c9b-c5a9-4900-9a46-a8f544ac5343}</Project>
       <Name>Abp.Web.Mvc</Name>
@@ -855,6 +886,18 @@
     <ProjectReference Include="..\BeiDream.Application\BeiDream.Application.csproj">
       <Project>{cb3499d2-4008-44e6-b84a-f29cddbdd80e}</Project>
       <Name>BeiDream.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeiDream.Core\BeiDream.Core.csproj">
+      <Project>{61f86539-c7e5-43bf-9808-3e71e5200307}</Project>
+      <Name>BeiDream.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeiDream.Ef\BeiDream.Ef.csproj">
+      <Project>{7ee3920e-9f67-485c-86a4-fcc68196d5ae}</Project>
+      <Name>BeiDream.Ef</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeiDream.WebApi\BeiDream.WebApi.csproj">
+      <Project>{96629897-2e87-4d94-b50a-62c1643a8b7d}</Project>
+      <Name>BeiDream.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

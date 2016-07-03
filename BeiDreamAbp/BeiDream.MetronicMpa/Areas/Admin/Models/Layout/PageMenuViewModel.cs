@@ -4,6 +4,7 @@
     {
         public string Icon { get; set; }
         public string PageName { get; set; }
+        public string DisplayName { get; set; }
         public bool IsActive { get; set; }
     }
 }

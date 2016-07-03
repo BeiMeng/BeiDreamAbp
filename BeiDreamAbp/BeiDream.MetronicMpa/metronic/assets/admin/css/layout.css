@@ -1,0 +1,20 @@
+﻿    .pageActive {
+        background-color: #36C6D3;
+        color: white;
+    }
+    .pageMenu a{
+        text-align: center;
+        padding-top:15px
+    }
+    .pageMenu i{
+        font-size: 30px;
+    }
+    .pageMenu span{
+        display: block;
+    }
+    .pageMenu li{
+        border-right:1px solid #808080
+    }
+    .pageMenuActive {
+        background-color:#afc8e1
+    }

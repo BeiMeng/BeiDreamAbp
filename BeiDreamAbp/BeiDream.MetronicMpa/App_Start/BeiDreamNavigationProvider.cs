@@ -3,6 +3,14 @@ using Abp.Localization;
 
 namespace BeiDream.MetronicMpa
 {
+    /// <summary>
+    /// UserMenu扩展数据
+    /// </summary>
+    public class UserMenuExtendData
+    {
+        public string Icon { get; set; }
+    }
+
     public class BeiDreamNavigationProvider : NavigationProvider
     {
         public override void SetNavigation(INavigationProviderContext context)
@@ -19,6 +27,7 @@ namespace BeiDream.MetronicMpa
         private void SetStudentsManageMeun(INavigationProviderContext context)
         {
             context.Manager.Menus.Add("StudentsManage", new MenuDefinition("StudentsManage", L("学生管理")));
+            context.Manager.Menus["StudentsManage"].CustomData = new UserMenuExtendData { Icon = "icon-home" };
             context.Manager.Menus["StudentsManage"]
                 .AddItem(new MenuItemDefinition(
                     "BusinessOne",
@@ -373,6 +382,7 @@ namespace BeiDream.MetronicMpa
         private void SetTeachingManageMeun(INavigationProviderContext context)
         {
             context.Manager.Menus.Add("TeachingManage", new MenuDefinition("TeachingManage", L("教学管理")));
+            context.Manager.Menus["TeachingManage"].CustomData = new UserMenuExtendData { Icon = "icon-share" };
             context.Manager.Menus["TeachingManage"]
                 .AddItem(new MenuItemDefinition(
                     "BusinessOne",
@@ -441,6 +451,7 @@ namespace BeiDream.MetronicMpa
         private void SetWorkingManageMeun(INavigationProviderContext context)
         {
             context.Manager.Menus.Add("WorkingManage", new MenuDefinition("WorkingManage", L("办公管理")));
+            context.Manager.Menus["WorkingManage"].CustomData = new UserMenuExtendData { Icon = "icon-users" };
             context.Manager.Menus["WorkingManage"]
                 .AddItem(new MenuItemDefinition(
                     "BusinessOne",
@@ -509,6 +520,7 @@ namespace BeiDream.MetronicMpa
         private void SetSysManageMeun(INavigationProviderContext context)
         {
             context.Manager.Menus.Add("SysManage", new MenuDefinition("SysManage", L("系统管理")));
+            context.Manager.Menus["SysManage"].CustomData = new UserMenuExtendData { Icon = "icon-settings" };
             context.Manager.Menus["SysManage"]
                 .AddItem(new MenuItemDefinition(
                     "BusinessOne",
@@ -529,8 +541,8 @@ namespace BeiDream.MetronicMpa
                     ))
                     .AddItem(new MenuItemDefinition(
                         "AuditLogs",
-                        L("系统三"),
-                        url: "/SystemManage/AuditLogs",
+                        L("WebApi查询"),
+                        url: "/swagger/ui/index",
                         icon: "fa fa-music",
                         requiresAuthentication: true
                     ))

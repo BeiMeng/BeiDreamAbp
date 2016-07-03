@@ -1,6 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Abp;
 using Abp.Application.Navigation;
+using Abp.Collections.Extensions;
 using Abp.Extensions;
 using Abp.Threading;
 using Abp.Web.Mvc.Controllers;
@@ -64,8 +66,27 @@ namespace BeiDream.MetronicMpa.Areas.Admin.Controllers
         }
         public PartialViewResult PageMenu(string activePageMenu)
         {
-            var pageMenu = new PageMenuViewModel();
-            return PartialView("_PageMenu", pageMenu);
+            if (activePageMenu.IsNullOrEmpty())
+            {
+                activePageMenu = "StudentsManage";
+            }
+            List<PageMenuViewModel> listPageMenuVm=new List<PageMenuViewModel>();
+            var listPageMenu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenusAsync(GetNormalizedUserIdentifier(null, AbpSession.UserId)));
+            foreach (var pageMenu in listPageMenu)
+            {
+                if (pageMenu.Items.IsNullOrEmpty())
+                    continue;
+                var pageMenuVm = new PageMenuViewModel
+                {
+                    PageName = pageMenu.Name,
+                    DisplayName = pageMenu.DisplayName,
+                    Icon = (pageMenu.CustomData as UserMenuExtendData).Icon,
+                    IsActive = pageMenu.Name==activePageMenu
+                };
+                listPageMenuVm.Add(pageMenuVm);
+            }
+
+            return PartialView("_PageMenu", listPageMenuVm);
         }
         public PartialViewResult Footer()
         {
