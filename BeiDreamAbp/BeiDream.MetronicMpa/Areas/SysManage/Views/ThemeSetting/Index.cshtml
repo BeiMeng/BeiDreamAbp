@@ -1,192 +1,208 @@
 ﻿@section head {
-    <link href="~/metronic/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" />
-    <link href="~/metronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+    .settingtheme-panel {
+        width:400px
+    }
+        .settingtheme-panel > .theme-options {
+            z-index: 100;
+            background: #3f4d56;
+            border: 1px solid #39454d;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+            .settingtheme-panel > .theme-options > .theme-option {
+                color: #eee;
+                padding: 11px;
+                border-top: 1px solid #46545f;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+
+                .settingtheme-panel > .theme-options > .theme-option > span {
+                    text-transform: uppercase;
+                    display: inline-block;
+                    width: 115px;
+                    font-size: 13px;
+                    font-weight: 300;
+                }
+
+                .settingtheme-panel > .theme-options > .theme-option > select.form-control {
+                    display: inline;
+                    width: 100px;
+                    padding: 2px;
+                    text-transform: lowercase;
+                }
+
+                .settingtheme-panel > .theme-options > .theme-option.theme-colors {
+                    border-top: 0;
+                }
+
+                    .settingtheme-panel > .theme-options > .theme-option.theme-colors > span {
+                        display: block;
+                        width: auto;
+                    }
+
+                    .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul {
+                        list-style: none;
+                        padding: 0;
+                        display: block;
+                        margin-bottom: 10px !important;
+                        margin-top: 15px;
+                    }
+
+                        .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul > li {
+                            width: 46px;
+                            height: 45px;
+                            margin: 0 4px;
+                            cursor: pointer;
+                            list-style: none;
+                            float: left;
+                            border: solid 1px #707070;
+                            /* theme colors */
+                        }
+
+                            .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul > li:first-child {
+                                margin-left: 0;
+                            }
+
+                            .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul > li:hover, .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul > li.current {
+                                border: solid 2px #d64635;
+                            }
+
+                            .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul > li.color-default {
+                                background: #2b3643;
+                            }
+
+                            .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul > li.color-dark {
+                                background: #333438;
+                            }
+
+                            .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul > li.color-blue {
+                                background: #26344B;
+                            }
+
+                            .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul > li.color-grey {
+                                background: #4D5B69;
+                            }
+
+                            .settingtheme-panel > .theme-options > .theme-option.theme-colors > ul > li.color-light {
+                                background: #f5f5f5;
+                            }
+</style>
 }
 @section PageTitle {
     <h3 class="page-title">
-        用户管理
-        <small>用户管理</small>
+         主题设置
+        <small>主题设置</small>
     </h3>
 }
 @section PageBar {
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
-                <i class="icon-home"></i>
-                <a href="index.html">Home</a>
+                <i class="icon-settings"></i>
+                <a href="@Url.Action("Index", "Dashboard", new { area = "Admin", activePageMenu ="SysManage"})">系统管理</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="#">Blank Page</a>
-                <i class="fa fa-angle-right"></i>
-            </li>
-            <li>
-                <span>Page Layouts</span>
+                <a href="#">主题设置</a>
             </li>
         </ul>
     </div>
 }
 @section Scripts {
-    <script src="~/metronic/assets/global/plugins/datatables/datatables.min.js"></script>
-    <script src="~/metronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var table = $('#sample_1');
-
-            // begin first table
-            table.dataTable({
-
-                // Internationalisation. For more info refer to http://datatables.net/manual/i18n
-                "language": {
-                    "aria": {
-                        "sortAscending": ": activate to sort column ascending",
-                        "sortDescending": ": activate to sort column descending"
-                    },
-                    "emptyTable": "No data available in table",
-                    "info": "Showing _START_ to _END_ of _TOTAL_ records",
-                    "infoEmpty": "No records found",
-                    "infoFiltered": "(filtered1 from _MAX_ total records)",
-                    "lengthMenu": "Show _MENU_",
-                    "search": "Search:",
-                    "zeroRecords": "No matching records found",
-                    "paginate": {
-                        "previous": "Prev",
-                        "next": "Next",
-                        "last": "Last",
-                        "first": "First"
-                    }
-                },
-
-                // Or you can use remote translation file
-                //"language": {
-                //   url: '//cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Portuguese.json'
-                //},
-
-                // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
-                // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
-                // So when dropdowns used the scrollable div should be removed.
-                //"dom": "<'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
-
-                "bStateSave": true, // save datatable state(pagination, sort, etc) in cookie.
-
-                "columnDefs": [{
-                    "targets": 0,
-                    "orderable": false,
-                    "searchable": false
-                }],
-
-                "lengthMenu": [
-                    [5, 15, 20, -1],
-                    [5, 15, 20, "All"] // change per page values here
-                ],
-                // set the initial value
-                "pageLength": 5,
-                "pagingType": "bootstrap_full_number",
-                "columnDefs": [{  // set default column settings
-                    'orderable': false,
-                    'targets': [0]
-                }, {
-                    "searchable": false,
-                    "targets": [0]
-                }],
-                "order": [
-                    [1, "asc"]
-                ] // set first column as a default sort by asc
+            $('.theme-colors > ul > li', $('.settingtheme-panel')).click(function () {
+                $('ul > li', $('.settingtheme-panel')).removeClass("current");
+                $(this).addClass("current");
             });
         });
     </script>
-}
+
+    }
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Primary Panel</h3>
+        <h3 class="panel-title">主题面板</h3>
     </div>
     <div class="panel-body">
-        <div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="Click to open advance theme customizer panel">
-            <i class="icon-settings"></i>
-        </div>
-        <div class="toggler-close">
-            <i class="icon-close"></i>
-        </div>
-        <div class="theme-options">
-            <div class="theme-option theme-colors clearfix">
-                <span> THEME COLOR </span>
-                <ul>
-                    <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default"> </li>
-                    <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey"> </li>
-                    <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue"> </li>
-                    <li class="color-dark tooltips" data-style="dark" data-container="body" data-original-title="Dark"> </li>
-                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light"> </li>
-                </ul>
-            </div>
-            <div class="theme-option">
-                <span> Theme Style </span>
-                <select class="layout-style-option form-control input-small">
-                    <option value="square" selected="selected">Square corners</option>
-                    <option value="rounded">Rounded corners</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> Layout </span>
-                <select class="layout-option form-control input-small">
-                    <option value="fluid" selected="selected">Fluid</option>
-                    <option value="boxed">Boxed</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> Header </span>
-                <select class="page-header-option form-control input-small">
-                    <option value="fixed" selected="selected">Fixed</option>
-                    <option value="default">Default</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> Top Dropdown</span>
-                <select class="page-header-top-dropdown-style-option form-control input-small">
-                    <option value="light" selected="selected">Light</option>
-                    <option value="dark">Dark</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> Sidebar Mode</span>
-                <select class="sidebar-option form-control input-small">
-                    <option value="fixed">Fixed</option>
-                    <option value="default" selected="selected">Default</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> Sidebar Style</span>
-                <select class="sidebar-style-option form-control input-small">
-                    <option value="default" selected="selected">Default</option>
-                    <option value="compact">Compact</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> Sidebar Menu </span>
-                <select class="sidebar-menu-option form-control input-small">
-                    <option value="accordion" selected="selected">Accordion</option>
-                    <option value="hover">Hover</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> Sidebar Position </span>
-                <select class="sidebar-pos-option form-control input-small">
-                    <option value="left" selected="selected">Left</option>
-                    <option value="right">Right</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> Footer </span>
-                <select class="page-footer-option form-control input-small">
-                    <option value="fixed">Fixed</option>
-                    <option value="default" selected="selected">Default</option>
-                </select>
+        <div class="settingtheme-panel">
+            <div class="theme-options" id="themeoptions">
+                <div class="theme-option theme-colors clearfix">
+                    <span> 主题颜色 </span>
+                    <ul>
+                        <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="默认(深蓝)"> </li>
+                        <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="灰色"> </li>
+                        <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="蓝色"> </li>
+                        <li class="color-dark tooltips" data-style="dark" data-container="body" data-original-title="黑色"> </li>
+                        <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="亮色"> </li>
+                    </ul>
+                </div>
+                <div class="theme-option">
+                    <span> 主题样式 </span>
+                    <select class="layout-style-option form-control input-small">
+                        <option value="square" selected="selected">方角</option>
+                        <option value="rounded">圆角</option>
+                    </select>
+                </div>
+                <div class="theme-option">
+                    <span> 布局样式 </span>
+                    <select class="layout-option form-control input-small">
+                        <option value="fluid" selected="selected">响应式布局</option>
+                        <option value="boxed">盒模型布局</option>
+                    </select>
+                </div>
+                <div class="theme-option">
+                    <span> 头部位置 </span>
+                    <select class="page-header-option form-control input-small">
+                        <option value="fixed" selected="selected">相对顶部固定</option>
+                        <option value="default">绝对顶部固定</option>
+                    </select>
+                </div>
+                <div class="theme-option">
+                    <span> 菜单栏模式</span>
+                    <select class="sidebar-option form-control input-small">
+                        <option value="fixed">滚动条模式(此模式不能使用悬浮的子菜单栏风格)</option>
+                        <option value="default" selected="selected">默认模式</option>
+                    </select>
+                </div>
+                <div class="theme-option">
+                    <span> 菜单栏样式</span>
+                    <select class="sidebar-style-option form-control input-small">
+                        <option value="default" selected="selected">默认模式</option>
+                        <option value="compact">简洁手风琴</option>
+                    </select>
+                </div>
+                <div class="theme-option">
+                    <span> 子菜单栏风格 </span>
+                    <select class="sidebar-menu-option form-control input-small">
+                        <option value="accordion" selected="selected">手风琴</option>
+                        <option value="hover">悬浮</option>
+                    </select>
+                </div>
+                <div class="theme-option">
+                    <span> 菜单栏位置</span>
+                    <select class="sidebar-pos-option form-control input-small">
+                        <option value="left" selected="selected">左边</option>
+                        <option value="right">右边</option>
+                    </select>
+                </div>
+                <div class="theme-option">
+                    <span> 页脚位置 </span>
+                    <select class="page-footer-option form-control input-small">
+                        <option value="fixed">相对底部固定</option>
+                        <option value="default" selected="selected">绝对底部固定</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="theme-panel">
 
-</div>
 
 
