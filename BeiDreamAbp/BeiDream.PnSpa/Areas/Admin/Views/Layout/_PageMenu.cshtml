@@ -1,6 +1,12 @@
 ﻿@model BeiDream.PnSpa.Areas.Admin.Models.Layout.PageMenuViewModel
-<ul>
-    <li class="active"><a href="@Url.Action("AdminLayout", "Layout", new { area = "Admin", activePageMenu = "MenuReply" })"><i class="fa fa-apple"></i>菜单回复</a></li>
-    <li><a href="@Url.Action("AdminLayout", "Layout", new { area = "Admin", activePageMenu = "MicroSite" })"><i class="fa fa-apple"></i>微网站</a></li>
-    <li><a href="@Url.Action("AdminLayout", "Layout", new { area = "Admin", activePageMenu = "SysManage" })"><i class="fa fa-apple"></i>系统管理</a></li>
+<ul class="nav navbar-top-links navbar-left">
+    <li class="hidden-xs">
+        <a href="@Url.Action("AdminLayout", "Layout", new {area = "Admin", activePageMenu = "MenuReply"})" class="J_menuItem" data-index="0"><i class="fa fa-cart-arrow-down"></i> 菜单回复</a>
+    </li>
+    <li class="hidden-xs">
+        <a href="@Url.Action("AdminLayout", "Layout", new {area = "Admin", activePageMenu = "MicroSite"})" class="J_menuItem" data-index="0"><i class="fa fa-cart-arrow-down"></i> 微网站</a>
+    </li>
+    <li class="hidden-xs">
+        <a href="@Url.Action("AdminLayout", "Layout", new {area = "Admin", activePageMenu = "SysManage"})" class="J_menuItem" data-index="0"><i class="fa fa-cart-arrow-down"></i> 系统管理</a>
+    </li>
 </ul>
