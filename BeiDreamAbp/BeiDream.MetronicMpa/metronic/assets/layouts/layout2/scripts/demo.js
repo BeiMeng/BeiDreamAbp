@@ -50,14 +50,14 @@ var Demo = function () {
 
         var setLayout = function () {
 
-            var layoutOption = $('.layout-option', panel).val();
-            var sidebarOption = $('.sidebar-option', panel).val();
-            var headerOption = $('.page-header-option', panel).val();
-            var footerOption = $('.page-footer-option', panel).val();
-            var sidebarPosOption = $('.sidebar-pos-option', panel).val();
-            var sidebarStyleOption = $('.sidebar-style-option', panel).val();
-            var sidebarMenuOption = $('.sidebar-menu-option', panel).val();
-            var headerTopDropdownStyle = $('.page-header-top-dropdown-style-option', panel).val();
+            var layoutOption = abp.setting.get("LayoutOption");
+            var sidebarOption = abp.setting.get("SidebarOption");
+            var headerOption = abp.setting.get("HeaderOption");
+            var footerOption = abp.setting.get("FooterOption");
+            var sidebarPosOption = abp.setting.get("SidebarPosOption");
+            var sidebarStyleOption = abp.setting.get("SidebarStyleOption");
+            var sidebarMenuOption = abp.setting.get("SidebarMenuOption");
+            var headerTopDropdownStyle = abp.setting.get("HeaderTopDropdownStyle");
 
 
             if (sidebarOption == "fixed" && headerOption == "default") {
@@ -235,16 +235,9 @@ var Demo = function () {
 
         if ($(".page-sidebar-menu").hasClass("page-sidebar-menu-hover-submenu")) {
             $('.sidebar-menu-option', panel).val("hover");
-        }        
-
-        var sidebarOption = $('.sidebar-option', panel).val();
-            var headerOption = $('.page-header-option', panel).val();
-            var footerOption = $('.page-footer-option', panel).val();
-            var sidebarPosOption = $('.sidebar-pos-option', panel).val();
-            var sidebarStyleOption = $('.sidebar-style-option', panel).val();
-            var sidebarMenuOption = $('.sidebar-menu-option', panel).val();
-
-        $('.layout-option, .page-header-top-dropdown-style-option, .page-header-option, .sidebar-option, .page-footer-option, .sidebar-pos-option, .sidebar-style-option, .sidebar-menu-option', panel).change(setLayout);
+        }
+        setColor(abp.setting.get("ThemeColor"));
+        setLayout();
     };
 
     // handle theme style
@@ -253,10 +246,6 @@ var Demo = function () {
         file = (App.isRTL() ? file + '-rtl' : file);
 
         $('#style_components').attr("href", App.getGlobalCssPath() + file + ".min.css");
-
-        if (typeof Cookies !== "undefined") {
-            Cookies.set('layout-style-option', style);
-        }
     };
 
     return {
@@ -266,16 +255,9 @@ var Demo = function () {
             // handles style customer tool
             handleTheme(); 
 
-            // handle layout style change
-            $('.theme-panel .layout-style-option').change(function() {
-                 setThemeStyle($(this).val());
-            });
 
-            // set layout style from cookie
-            if (typeof Cookies !== "undefined" && Cookies.get('layout-style-option') === 'rounded') {
-                setThemeStyle(Cookies.get('layout-style-option'));
-                $('.theme-panel .layout-style-option').val(Cookies.get('layout-style-option'));
-            }            
+            setThemeStyle(abp.setting.get("ThemeStyle"));
+ 
         }
     };
 

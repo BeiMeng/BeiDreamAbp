@@ -6,7 +6,6 @@ using Abp.MultiTenancy;
 using BeiDream.Core.Admin.SysManage.Authorization.Roles;
 using BeiDream.Core.Admin.SysManage.Authorization.Users;
 using BeiDream.Ef.EntityFramework;
-using MyCompanyName.AbpZeroTemplate.Authorization.Roles;
 
 namespace BeiDream.Ef.Migrations.Seed.Host
 {

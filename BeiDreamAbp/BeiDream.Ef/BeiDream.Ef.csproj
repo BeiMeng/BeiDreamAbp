@@ -71,11 +71,12 @@
     <Compile Include="DataModule.cs" />
     <Compile Include="EntityFramework\BeiDreamAbpDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\RepositoryBase.cs" />
-    <Compile Include="Migrations\201607021338224_InitialCreate.cs" />
-    <Compile Include="Migrations\201607021338224_InitialCreate.Designer.cs">
-      <DependentUpon>201607021338224_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201608250929292_InitialCreate.cs" />
+    <Compile Include="Migrations\201608250929292_InitialCreate.Designer.cs">
+      <DependentUpon>201608250929292_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Seed\Host\DefaultSettingsCreator.cs" />
     <Compile Include="Migrations\Seed\Host\HostRoleAndUserCreator.cs" />
     <Compile Include="Migrations\Seed\Host\InitialHostDbBuilder.cs" />
     <Compile Include="Migrations\Seed\Tenants\DefaultTenantBuilder.cs" />
@@ -109,8 +110,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607021338224_InitialCreate.resx">
-      <DependentUpon>201607021338224_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608250929292_InitialCreate.resx">
+      <DependentUpon>201608250929292_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

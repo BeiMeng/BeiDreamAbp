@@ -71,6 +71,7 @@
     <Compile Include="Admin\SysManage\Authorization\Users\UserManager.cs" />
     <Compile Include="Admin\SysManage\Authorization\Users\UserStore.cs" />
     <Compile Include="Admin\SysManage\MultiTenancy\Tenant.cs" />
+    <Compile Include="Admin\SysManage\ThemeSetting\ThemeSettingOptionsName.cs" />
     <Compile Include="CoreModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace MyCompanyName.AbpZeroTemplate.Authorization.Roles
+﻿namespace BeiDream.Core.Admin.SysManage.Authorization.Roles
 {
     public static class StaticRoleNames
     {

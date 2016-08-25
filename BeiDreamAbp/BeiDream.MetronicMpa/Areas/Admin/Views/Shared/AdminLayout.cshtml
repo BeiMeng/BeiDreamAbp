@@ -1,4 +1,5 @@
-﻿@model BeiDream.MetronicMpa.Areas.Admin.Models.Layout.LayoutParamsViewModel
+﻿@using Abp.Timing
+@model BeiDream.MetronicMpa.Areas.Admin.Models.Layout.LayoutParamsViewModel
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
@@ -95,95 +96,10 @@
             <!-- BEGIN CONTENT BODY -->
             <div class="page-content">
                 <!-- BEGIN PAGE HEADER-->
-                <!-- BEGIN THEME PANEL -->
-                <div class="theme-panel">
-                    <div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="Click to open advance theme customizer panel">
-                        <i class="icon-settings"></i>
-                    </div>
-                    <div class="toggler-close">
-                        <i class="icon-close"></i>
-                    </div>
-                    <div class="theme-options">
-                        <div class="theme-option theme-colors clearfix">
-                            <span> THEME COLOR </span>
-                            <ul>
-                                <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default"> </li>
-                                <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey"> </li>
-                                <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue"> </li>
-                                <li class="color-dark tooltips" data-style="dark" data-container="body" data-original-title="Dark"> </li>
-                                <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light"> </li>
-                            </ul>
-                        </div>
-                        <div class="theme-option">
-                            <span> Theme Style </span>
-                            <select class="layout-style-option form-control input-small">
-                                <option value="square" selected="selected">Square corners</option>
-                                <option value="rounded">Rounded corners</option>
-                            </select>
-                        </div>
-                        <div class="theme-option">
-                            <span> Layout </span>
-                            <select class="layout-option form-control input-small">
-                                <option value="fluid" selected="selected">Fluid</option>
-                                <option value="boxed">Boxed</option>
-                            </select>
-                        </div>
-                        <div class="theme-option">
-                            <span> Header </span>
-                            <select class="page-header-option form-control input-small">
-                                <option value="fixed" selected="selected">Fixed</option>
-                                <option value="default">Default</option>
-                            </select>
-                        </div>
-                        <div class="theme-option">
-                            <span> Top Dropdown</span>
-                            <select class="page-header-top-dropdown-style-option form-control input-small">
-                                <option value="light" selected="selected">Light</option>
-                                <option value="dark">Dark</option>
-                            </select>
-                        </div>
-                        <div class="theme-option">
-                            <span> Sidebar Mode</span>
-                            <select class="sidebar-option form-control input-small">
-                                <option value="fixed">Fixed</option>
-                                <option value="default" selected="selected">Default</option>
-                            </select>
-                        </div>
-                        <div class="theme-option">
-                            <span> Sidebar Style</span>
-                            <select class="sidebar-style-option form-control input-small">
-                                <option value="default" selected="selected">Default</option>
-                                <option value="compact">Compact</option>
-                            </select>
-                        </div>
-                        <div class="theme-option">
-                            <span> Sidebar Menu </span>
-                            <select class="sidebar-menu-option form-control input-small">
-                                <option value="accordion" selected="selected">Accordion</option>
-                                <option value="hover">Hover</option>
-                            </select>
-                        </div>
-                        <div class="theme-option">
-                            <span> Sidebar Position </span>
-                            <select class="sidebar-pos-option form-control input-small">
-                                <option value="left" selected="selected">Left</option>
-                                <option value="right">Right</option>
-                            </select>
-                        </div>
-                        <div class="theme-option">
-                            <span> Footer </span>
-                            <select class="page-footer-option form-control input-small">
-                                <option value="fixed">Fixed</option>
-                                <option value="default" selected="selected">Default</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <!-- END THEME PANEL -->
                     @RenderSection("PageTitle", false)
                     @RenderSection("PageBar", false)
                     @RenderBody()
-</div>
+            </div>
             <!-- END CONTENT BODY -->
         </div>
         <!-- END CONTENT -->
@@ -210,9 +126,51 @@
     <!-- END THEME GLOBAL SCRIPTS -->
     <!-- BEGIN THEME LAYOUT SCRIPTS -->
     <script src="~/metronic/assets/layouts/layout2/scripts/layout.min.js" type="text/javascript"></script>
-    <script src="~/metronic/assets/layouts/layout2/scripts/demo.min.js" type="text/javascript"></script>
     <script src="~/metronic/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
     <!-- END THEME LAYOUT SCRIPTS -->
+    <script type="text/javascript">
+        var abp = abp || {};
+        (function($) {
+            /* SETTINGS **************************************************/
+            //Implements Settings API that simplifies usage of setting scripts generated by Abp.
+
+            abp.setting = abp.setting || {};
+
+            abp.setting.values = abp.setting.values || {};
+
+            abp.setting.get = function(name) {
+                return abp.setting.values[name];
+            };
+
+            abp.setting.getBoolean = function(name) {
+                var value = abp.setting.get(name);
+                return value === 'true' || value === 'True';
+            };
+
+            abp.setting.getInt = function(name) {
+                return parseInt(abp.setting.values[name]);
+            };
+        })(jQuery);
+
+        //(function ($) {
+
+        //    abp.setting.values = {
+        //        ThemeColor:"blue",
+        //        ThemeStyle: "rounded",
+        //        LayoutOption: "fluid",
+        //        SidebarOption: "fixed",
+        //        SidebarPosOption: "left",
+        //        SidebarStyleOption: "compact",
+        //        SidebarMenuOption: "accordion",
+        //        HeaderOption: "fixed",
+        //        FooterOption: "fixed",
+        //        HeaderTopDropdownStyle: "light"
+        //    };
+
+        //})(jQuery);
+    </script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+    <script src="~/metronic/assets/layouts/layout2/scripts/demo.js" type="text/javascript"></script>
     @RenderSection("Scripts", false)
 </body>
 </html>
