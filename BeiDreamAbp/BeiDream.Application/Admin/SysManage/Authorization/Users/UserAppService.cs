@@ -1,26 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.Entity;
-using System.Diagnostics;
-using System.Linq;
 using System.Linq.Dynamic;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
-using Abp.Authorization;
-using Abp.Authorization.Users;
 using Abp.AutoMapper;
-using Abp.Linq.Extensions;
 using Abp.Extensions;
-using Abp.Notifications;
-using Abp.Runtime.Session;
-using Abp.UI;
-using BeiDream.Application.Authorization.Users.Dto;
-using BeiDream.Core.Admin.SysManage.Authorization.Roles;
-using BeiDream.Core.Admin.SysManage.Authorization.Users;
-using Microsoft.AspNet.Identity;
-using MyCompanyName.AbpZeroTemplate.Authorization.Users.Dto;
+using Abp.Linq.Extensions;
+using BeiDream.Application.Admin.SysManage.Authorization.Users.Dto;
 
-namespace BeiDream.Application.Authorization.Users
+namespace BeiDream.Application.Admin.SysManage.Authorization.Users
 {
     public class UserAppService : AppServiceBase, IUserAppService
     {

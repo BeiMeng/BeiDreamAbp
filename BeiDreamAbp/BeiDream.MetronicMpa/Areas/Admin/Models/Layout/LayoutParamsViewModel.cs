@@ -4,6 +4,8 @@
     {
         public string Title { get; set; }
         public string ActivePageMenuName { get; set; }
-        public string ActiveMenuName { get; set; } 
+        public string ActiveMenuName { get; set; }
+
+        public object PageDatas { get; set; }
     }
 }

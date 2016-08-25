@@ -69,13 +69,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Configuration\Host\Dto\ThemeSettingEditDto.cs" />
+    <Compile Include="Admin\Configuration\Host\HostSettingsAppService.cs" />
+    <Compile Include="Admin\Configuration\Host\IHostSettingsAppService.cs" />
     <Compile Include="AppConsts.cs" />
     <Compile Include="ApplicationModule.cs" />
     <Compile Include="AppServiceBase.cs" />
-    <Compile Include="Authorization\Users\Dto\GetUsersInput.cs" />
-    <Compile Include="Authorization\Users\Dto\UserListDto.cs" />
-    <Compile Include="Authorization\Users\IUserAppService.cs" />
-    <Compile Include="Authorization\Users\UserAppService.cs" />
+    <Compile Include="Admin\SysManage\Authorization\Users\Dto\GetUsersInput.cs" />
+    <Compile Include="Admin\SysManage\Authorization\Users\Dto\UserListDto.cs" />
+    <Compile Include="Admin\SysManage\Authorization\Users\IUserAppService.cs" />
+    <Compile Include="Admin\SysManage\Authorization\Users\UserAppService.cs" />
     <Compile Include="Dto\PagedAndSortedInputDto.cs" />
     <Compile Include="Dto\PagedInputDto.cs" />
     <Compile Include="Test\ITest.cs" />

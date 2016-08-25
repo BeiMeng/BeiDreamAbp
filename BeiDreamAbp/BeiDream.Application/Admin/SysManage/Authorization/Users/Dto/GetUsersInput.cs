@@ -1,7 +1,7 @@
 ﻿using Abp.Runtime.Validation;
 using BeiDream.Application.Dto;
 
-namespace MyCompanyName.AbpZeroTemplate.Authorization.Users.Dto
+namespace BeiDream.Application.Admin.SysManage.Authorization.Users.Dto
 {
     public class GetUsersInput : PagedAndSortedInputDto, IShouldNormalize
     {

@@ -9,6 +9,7 @@ using Abp.Zero;
 using Abp.Zero.Configuration;
 using BeiDream.Core.Admin.SysManage.Authorization.Roles;
 using BeiDream.Core.Admin.SysManage.Authorization.Users;
+using BeiDream.Core.Admin.SysManage.Configuration;
 using BeiDream.Core.Admin.SysManage.MultiTenancy;
 
 namespace BeiDream.Core
@@ -44,7 +45,7 @@ namespace BeiDream.Core
 
             ////Adding setting providers
             //Configuration.Settings.Providers.Add<AppSettingProvider>();
-
+            Configuration.Settings.Providers.Add<ThemeSettingProvider>();
             ////Adding notification providers
             //Configuration.Notifications.Providers.Add<AppNotificationProvider>();
 

@@ -20,16 +20,16 @@ namespace BeiDream.Ef.Migrations.Seed.Host
         public void Create()
         {
             //后台UI主题默认设置
-            AddSettingIfNotExists(ThemeSettingOptionsName.ThemeColor, "blue");
-            AddSettingIfNotExists(ThemeSettingOptionsName.ThemeStyle, "rounded");
-            AddSettingIfNotExists(ThemeSettingOptionsName.Layout, "fluid");
-            AddSettingIfNotExists(ThemeSettingOptionsName.SidebarMode, "fixed");
-            AddSettingIfNotExists(ThemeSettingOptionsName.SidebarPosition, "left");
-            AddSettingIfNotExists(ThemeSettingOptionsName.SidebarStyle, "compact");
-            AddSettingIfNotExists(ThemeSettingOptionsName.SidebarMenu, "accordion");
-            AddSettingIfNotExists(ThemeSettingOptionsName.HeaderPosition, "fixed");
-            AddSettingIfNotExists(ThemeSettingOptionsName.FooterPosition, "fixed");
-            AddSettingIfNotExists(ThemeSettingOptionsName.HeaderTopDropdownStyle, "light");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.ThemeColor, "blue");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.ThemeStyle, "rounded");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.Layout, "fluid");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.SidebarMode, "fixed");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.SidebarPosition, "left");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.SidebarStyle, "compact");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.SidebarMenu, "accordion");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.HeaderPosition, "fixed");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.FooterPosition, "fixed");
+            AddSettingIfNotExists(ThemeSettingOptionsNames.HeaderTopDropdownStyle, "light");
         }
 
         private void AddSettingIfNotExists(string name, string value, int? tenantId = null)

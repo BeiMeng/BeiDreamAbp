@@ -3,7 +3,7 @@
     /// <summary>
     /// 主题设置选项名称
     /// </summary>
-    public class ThemeSettingOptionsName
+    public class ThemeSettingOptionsNames
     {
         /// <summary>
         /// 默认主题颜色

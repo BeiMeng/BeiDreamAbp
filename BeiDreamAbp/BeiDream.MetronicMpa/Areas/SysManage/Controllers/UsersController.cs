@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using BeiDream.Application.Authorization.Users;
+using BeiDream.Application.Admin.SysManage.Authorization.Users;
+using BeiDream.Application.Admin.SysManage.Authorization.Users.Dto;
 using BeiDream.MetronicMpa.Areas.Admin.Controllers;
-using MyCompanyName.AbpZeroTemplate.Authorization.Users.Dto;
 
 namespace BeiDream.MetronicMpa.Areas.SysManage.Controllers
 {
