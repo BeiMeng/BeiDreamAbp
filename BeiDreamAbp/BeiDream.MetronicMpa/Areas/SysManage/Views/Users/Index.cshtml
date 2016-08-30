@@ -1,5 +1,9 @@
-﻿@section head { 
-
+﻿@section head {
+    <style type="text/css">
+        /*.dataTables_wrapper .dataTables_paginate .paginate_button {
+            display: inline;
+        }*/
+    </style>
 }
 @section PageBar {
 <div class="page-bar">
@@ -16,7 +20,25 @@
 </div>
 }
 @section Scripts {
-    <script src="~/Areas/SysManage/Views/Users/table-datatables-ajax.js"></script>
+<script>
+    $(function () {
+        var userTable = $('#area').DataTable({
+            "ajax": {
+                "url": "@Url.Action("GetUserDatas", "Users")",
+                "data": function (data) {
+                    data.Name = $("#name").val();//此处是添加额外的请求参数
+                    return JSON.stringify(data);
+                }
+            }
+        });
+        userTable.on('init.dt', function () {
+            $(".pagination li").removeClass("paginate_button");
+        });
+        userTable.on('draw.dt', function () {
+            $(".pagination li").removeClass("paginate_button");
+        });
+    });
+</script>
 }
 
 <!-- Begin: life time stats -->
@@ -116,65 +138,17 @@
             </div>
         </div>       
         <div class="table-container">
-            <div id="sample_3_wrapper" class="dataTables_wrapper no-footer">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <div class="dataTables_length" id="sample_3_length">
-                            <label>
-                                Show
-                                <select name="sample_3_length" aria-controls="sample_3" class="form-control input-sm input-xsmall input-inline">
-                                    <option value="6">6</option>
-                                    <option value="15">15</option>
-                                    <option value="20">20</option>
-                                    <option value="-1">All</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                        <div id="sample_3_filter" class="dataTables_filter">
-                            <label>Search:
-                                <input type="search" class="form-control input-sm input-small input-inline" placeholder="" aria-controls="sample_3">
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="table-scrollable">
-                    <table class="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer" id="sample_3" role="grid" aria-describedby="sample_3_info">
-                        <thead>
-                        <tr role="row">
-                            <th class="table-checkbox sorting_disabled" rowspan="1" colspan="1" aria-label="
-                                                " style="width: 63px;">
-                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                    <input type="checkbox" class="group-checkable" data-set="#sample_3 .checkboxes">
-                                    <span></span>
-                                </label>
-                            </th>
-                            <th class="sorting_asc" tabindex="0" aria-controls="sample_3" rowspan="1" colspan="1" aria-sort="ascending" aria-label=" Username : activate to sort column descending" style="width: 137px;"> Username </th>
-                            <th class="sorting" tabindex="0" aria-controls="sample_3" rowspan="1" colspan="1" aria-label=" Email : activate to sort column ascending" style="width: 209px;"> Email </th>
-                            <th class="sorting" tabindex="0" aria-controls="sample_3" rowspan="1" colspan="1" aria-label=" Status : activate to sort column ascending" style="width: 109px;"> Status </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="row">                   
-                    <div class="col-md-5 col-sm-5">
-                        <div class="dataTables_info" id="sample_3_info" role="status" aria-live="polite">Showing 1 to 6 of 12 records</div>
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <div class="dataTables_paginate paging_bootstrap_number" id="sample_3_paginate">
-                            <ul class="pagination" style="visibility: visible;">
-                                <li class="prev disabled"><a href="#" title="Prev"><i class="fa fa-angle-left"></i></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li class="next"><a href="#" title="Next"><i class="fa fa-angle-right"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <table id="area" class="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer" data-order="[[0,&quot;desc&quot;]]" width="100%">
+                <thead>
+                    <tr>
+                        <th data-data="Id" data-visible="false">Id</th>
+                        <th data-data="Name">名称</th>
+                        <th data-data="Surname" data-orderable="false">描述</th>
+                        <th data-data="UserName">X坐标</th>
+                        <th data-data="EmailAddress">Y坐标</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
 </div>

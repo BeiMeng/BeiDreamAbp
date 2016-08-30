@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using BeiDream.Application.Admin.SysManage.Authorization.Users;
 using BeiDream.Application.Admin.SysManage.Authorization.Users.Dto;
 using BeiDream.MetronicMpa.Areas.Admin.Controllers;
+using BeiDream.MetronicMpa.Areas.SysManage.Models;
 
 namespace BeiDream.MetronicMpa.Areas.SysManage.Controllers
 {
@@ -27,5 +28,18 @@ namespace BeiDream.MetronicMpa.Areas.SysManage.Controllers
             WrapLayoutParams(this.HttpContext);
             return View(LayoutParamsViewModel);
         }
+        #region DataTables
+
+        public async Task<JsonResult> GetUserDatas(UserQueryVm query)
+        {
+            GetUsersInput usersInput=new GetUsersInput();
+            usersInput.Filter = query.Search.Value;
+            usersInput.SkipCount = query.Start;
+            usersInput.MaxResultCount = query.Length;
+            usersInput.Sorting = query.OrderBy + " " + query.OrderDir;
+            var users = await _userAppService.GetUsers(usersInput);
+            return DataTablesJson(query.Draw, users.TotalCount, users.TotalCount, users.Items);
+        }
+        #endregion
     }
 }
