@@ -137,18 +137,25 @@
     <script src="~/metronic/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
     <!-- END THEME LAYOUT SCRIPTS -->
 
-    <!-- 第三方插件 -->
+    <!-- 第三方组件(界面展示) -->
     <script src="~/metronic/assets/global/plugins/commonPlugins/bootstrap-toastr/toastr.js"></script>
     <script src="~/metronic/assets/global/plugins/commonPlugins/sweetalert/sweet-alert.js"></script>
     <script src="~/metronic/assets/global/plugins/commonPlugins/datatables/datatables.all.min.js"></script>
     <script src="~/metronic/assets/global/plugins/commonPlugins/datatables/plugins/bootstrap/datatables.bootstrap.js"></script>
     <script src="~/metronic/assets/global/scripts/datatable.js"></script>
 
+    <!-- 第三方插件(扩展方法及函数) -->
+    <script src="~/Scripts/plugins/underscore/underscore.js"></script>
+    <script src="~/Scripts/plugins/moment/moment.min.js"></script>
+    <script src="~/Scripts/plugins/moment/moment-with-locales.js"></script>
+
     <!-- 自定义扩展 -->
-    <script src="~/Scripts/util/abp.js"></script>
-    <script src="~/Scripts/util/abp.jquery.js"></script>
-    <script src="~/Scripts/util/abp.sweet-alert.js"></script>
-    <script src="~/Scripts/util/abp.toastr.js"></script>
+    <script src="~/Scripts/abputil/abp.js"></script>
+    <script src="~/Scripts/abputil/abp.jquery.js"></script>
+    <script src="~/Scripts/abputil/abp.sweet-alert.js"></script>
+    <script src="~/Scripts/abputil/abp.toastr.js"></script>
+
+    <script src="~/Scripts/util/helpers.js"></script>
 
     <!-- 后端动态生成使用js-->
     <script src="~/api/AbpServiceProxies/GetAll"></script>
@@ -156,7 +163,7 @@
 
 
     <!-- 主题显示js-->
-    <script src="~/metronic/assets/layouts/layout2/scripts/demo.js" type="text/javascript"></script>
+    <script src="~/metronic/assets/admin/scripts/theme.js"></script>
     @RenderSection("Scripts", false)
 </body>
 </html>

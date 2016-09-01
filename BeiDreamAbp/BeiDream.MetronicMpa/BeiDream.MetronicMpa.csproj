@@ -129,7 +129,6 @@
   <ItemGroup>
     <Content Include="Areas\SysManage\Views\ThemeSetting\Index.css" />
     <Content Include="Areas\SysManage\Views\ThemeSetting\Index.js" />
-    <Content Include="Areas\SysManage\Views\Users\table-datatables-ajax.js" />
     <Content Include="Global.asax" />
     <Content Include="metronic\assets\admin\css\layout.css" />
     <Content Include="metronic\assets\global\css\components-md.css" />
@@ -688,6 +687,10 @@
     <Content Include="metronic\assets\global\plugins\bootstrap-switch\css\bootstrap-switch.min.css" />
     <Content Include="metronic\assets\global\plugins\bootstrap-switch\js\bootstrap-switch.js" />
     <Content Include="metronic\assets\global\plugins\bootstrap-switch\js\bootstrap-switch.min.js" />
+    <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-daterangepicker\daterangepicker.min.css" />
+    <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-daterangepicker\daterangepicker.min.js" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-toastr\toastr.css" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-toastr\toastr.js" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-toastr\toastr.min.css" />
@@ -810,14 +813,22 @@
     <Content Include="metronic\assets\layouts\layout2\img\sidebar_toggler_icon_grey.png" />
     <Content Include="metronic\assets\layouts\layout2\img\sidebar_toggler_icon_light.png" />
     <Content Include="metronic\assets\layouts\layout2\img\sidebar_toggler_icon_light2.png" />
-    <Content Include="metronic\assets\layouts\layout2\scripts\demo.js" />
-    <Content Include="metronic\assets\layouts\layout2\scripts\demo.min.js" />
+    <Content Include="metronic\assets\admin\scripts\theme.js" />
     <Content Include="metronic\assets\layouts\layout2\scripts\layout.js" />
     <Content Include="metronic\assets\layouts\layout2\scripts\layout.min.js" />
-    <Content Include="Scripts\util\abp.jquery.js" />
-    <Content Include="Scripts\util\abp.js" />
-    <Content Include="Scripts\util\abp.sweet-alert.js" />
-    <Content Include="Scripts\util\abp.toastr.js" />
+    <Content Include="Scripts\abputil\abp.jquery.js" />
+    <Content Include="Scripts\abputil\abp.js" />
+    <Content Include="Scripts\abputil\abp.sweet-alert.js" />
+    <Content Include="Scripts\abputil\abp.toastr.js" />
+    <Content Include="Scripts\plugins\moment\locales.js" />
+    <Content Include="Scripts\plugins\moment\locales.min.js" />
+    <Content Include="Scripts\plugins\moment\moment-with-locales.js" />
+    <Content Include="Scripts\plugins\moment\moment-with-locales.min.js" />
+    <Content Include="Scripts\plugins\moment\moment.min.js" />
+    <Content Include="Scripts\plugins\moment\tests.js" />
+    <Content Include="Scripts\plugins\underscore\underscore.js" />
+    <Content Include="Scripts\plugins\underscore\underscore.min.js" />
+    <Content Include="Scripts\util\helpers.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -897,6 +908,7 @@
     <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-toastr\README.md" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-toastr\toastr.min.js.map" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\sweetalert\sweet-alert.scss" />
+    <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-daterangepicker\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -915,7 +927,6 @@
     <Folder Include="Areas\WorkingManage\Controllers\" />
     <Folder Include="Areas\WorkingManage\Models\" />
     <Folder Include="Areas\WorkingManage\Views\Shared\" />
-    <Folder Include="metronic\assets\admin\scripts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Abp\Abp.Web.Api\Abp.Web.Api.csproj">
