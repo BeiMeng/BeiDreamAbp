@@ -129,6 +129,7 @@
   <ItemGroup>
     <Content Include="Areas\SysManage\Views\ThemeSetting\Index.css" />
     <Content Include="Areas\SysManage\Views\ThemeSetting\Index.js" />
+    <Content Include="Areas\SysManage\Views\Users\Index.js" />
     <Content Include="Global.asax" />
     <Content Include="metronic\assets\admin\css\layout.css" />
     <Content Include="metronic\assets\global\css\components-md.css" />

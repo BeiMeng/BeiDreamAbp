@@ -1,4 +1,5 @@
-﻿@section head {
+﻿@using Abp.Web.Mvc.Extensions
+@section head {
 <link href="~/metronic/assets/global/plugins/commonPlugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
 }
 @section PageBar {
@@ -16,84 +17,8 @@
 </div>
 }
 @section Scripts {
-<script src="~/metronic/assets/global/plugins/commonPlugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script>
-    $(function () {
-        moment.locale('zh-CN'); //设置当前语言环境为中文
-        var todayAsString = moment().format('YYYY-MM-DD');
-        var selectedDateRange = {
-            StartCreateTime: todayAsString,
-            EndCreateTime: todayAsString
-        };
-
-        $('input.date-range-picker').daterangepicker(
-            $.extend(true, app.createDateRangePickerOptions(), selectedDateRange),
-            function (start, end, label) {
-                selectedDateRange.StartCreateTime = start.format('YYYY-MM-DD');
-                selectedDateRange.EndCreateTime = end.format('YYYY-MM-DD');
-            });
-        var userTable = $('#area').DataTable({
-            "ajax": {
-                "url": "@Url.Action("GetUserDatas", "Users")",
-                "data": function (data) {
-                    data.UserName = $("#txtUserName").val();//此处是添加额外的请求参数
-                    data = $.extend(data, selectedDateRange);
-                    return JSON.stringify(data);
-                }
-            },
-            "columnDefs": [{
-                "targets": 1,
-                "width": "15px",
-                render: function (data, type, full, meta) {
-                    return '<input type="checkbox" id="checkbox-all-' + full.Id + '" value="' + full.Id + '" />';
-                }
-            },
-            {
-                "targets": 5,
-                render: function (data, type, full, meta) {
-                    if (full.lastLoginTime) {
-                        return moment(full.lastLoginTime).format('L');
-                    }
-
-                    return '-';
-                }
-            },
-            {
-                "targets": 6,
-                render: function (data, type, full, meta) {
-                    return moment(full.creationTime).format('L');
-                }
-            },
-            {
-                "targets": -1,
-                "width": "100px",
-                render: function (data, type, full, meta) {
-                    var $span = $('<span></span>');
-                    $('<button class="btn btn-default btn-xs" title="编辑"><i class="fa fa-edit"></i></button>')
-                    .appendTo($span)
-                    .click(function () {
-                        alert("编辑");
-                    });
-                    $('<button class="btn btn-default btn-xs" title="删除"><i class="fa fa-trash-o"></i></button>')
-                    .appendTo($span)
-                    .click(function () {
-                        alert("删除");
-                    });
-                    return $span.html();
-                }
-            }]
-        });
-        userTable.on('init.dt', function () {
-            $(".pagination li").removeClass("paginate_button");
-        });
-        userTable.on('draw.dt', function () {
-            $(".pagination li").removeClass("paginate_button");
-        });
-        $("#btnSearch").click(function () {
-            userTable.ajax.reload();
-        });
-    });
-</script>
+    <script src="~/metronic/assets/global/plugins/commonPlugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    @Html.IncludeScript("~/Areas/SysManage/Views/Users/Index.js")
 }
 
 <!-- Begin: life time stats -->
@@ -135,19 +60,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <div>
-                        <button id="sample_editable_1_new" class="btn sbold green">
+                        <button id="btnAdd" class="btn sbold green">
                             <i class="fa fa-plus"></i>
                             新增用户
                         </button>
-                        <button id="sample_editable_2_new" class="btn sbold blue">
+                        <button id="btnEdit" class="btn sbold blue">
                             <i class="fa fa-pencil"></i>
                             修改用户
                         </button>
-                        <button id="sample_editable_3_new" class="btn sbold red">
+                        <button id="btnDel" class="btn sbold red">
                             <i class="fa fa-remove"></i>
                             删除用户
                         </button>
-                        <button id="sample_editable_4_new" class="btn sbold yellow">
+                        <button id="btnDetail" class="btn sbold yellow">
                             <i class="fa fa-server"></i>
                             详细信息
                         </button>
@@ -155,7 +80,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="btn-group pull-right">
-                        <button class="btn blue">
+                        <button class="btn blue" id="btnRefresh">
                             <i class="fa fa-refresh"></i>
                             刷新
                         </button>
@@ -187,7 +112,7 @@
             </div>
         </div>
         <div class="table-container">
-            <table id="area" class="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer" data-order="[[0,&quot;desc&quot;]]" width="100%">
+            <table id="grid" class="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer" data-order="[[0,&quot;desc&quot;]]" width="100%">
                 <thead>
                     <tr>
                         <th data-data="Id" data-visible="false">Id</th>
