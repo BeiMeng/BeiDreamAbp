@@ -28,7 +28,6 @@ namespace BeiDream.MetronicMpa.Areas.SysManage.Controllers
             WrapLayoutParams(this.HttpContext);
             return View(LayoutParamsViewModel);
         }
-        #region DataTables
 
         public async Task<JsonResult> GetUserDatas(UserQueryVm query)
         {
@@ -40,6 +39,9 @@ namespace BeiDream.MetronicMpa.Areas.SysManage.Controllers
             var users = await _userAppService.GetUsers(usersInput);
             return DataTablesJson(query.Draw, users.TotalCount, users.TotalCount, users.Items);
         }
-        #endregion
+        public async Task<PartialViewResult> CreateOrEditModal(long? id)
+        {
+            return PartialView("_CreateOrEditModal", id.ToString());
+        }
     }
 }

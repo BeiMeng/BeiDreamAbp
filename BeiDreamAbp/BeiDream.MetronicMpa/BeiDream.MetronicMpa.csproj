@@ -130,6 +130,7 @@
     <Content Include="Areas\SysManage\Views\ThemeSetting\Index.css" />
     <Content Include="Areas\SysManage\Views\ThemeSetting\Index.js" />
     <Content Include="Areas\SysManage\Views\Users\Index.js" />
+    <Content Include="Areas\SysManage\Views\Users\_CreateOrEditModal.js" />
     <Content Include="Global.asax" />
     <Content Include="metronic\assets\admin\css\layout.css" />
     <Content Include="metronic\assets\global\css\components-md.css" />
@@ -830,6 +831,7 @@
     <Content Include="Scripts\plugins\underscore\underscore.js" />
     <Content Include="Scripts\plugins\underscore\underscore.min.js" />
     <Content Include="Scripts\util\helpers.js" />
+    <Content Include="Scripts\util\ModalManager.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -896,6 +898,8 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Layout\_Footer.cshtml" />
     <Content Include="Areas\StudentsManage\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Common\Modals\_ModalFooterWithSaveAndCancel.cshtml" />
+    <Content Include="Areas\Admin\Views\Common\Modals\_ModalHeader.cshtml" />
     <None Include="Areas\StudentsManage\Views\StudentRegister\Index.cshtml" />
     <Content Include="Areas\StudentsManage\Views\_ViewStart.cshtml" />
     <Content Include="Areas\WorkingManage\Views\web.config" />
@@ -910,6 +914,7 @@
     <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-toastr\toastr.min.js.map" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\sweetalert\sweet-alert.scss" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\bootstrap-daterangepicker\README.md" />
+    <Content Include="Areas\SysManage\Views\Users\_CreateOrEditModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

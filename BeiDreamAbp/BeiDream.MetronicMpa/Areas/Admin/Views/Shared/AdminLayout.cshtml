@@ -1,4 +1,6 @@
-﻿@using Abp.Timing
+﻿@using System.Threading
+@using Abp.Extensions
+@using Abp.Timing
 @model BeiDream.MetronicMpa.Areas.Admin.Models.Layout.LayoutParamsViewModel
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -146,18 +148,25 @@
 
     <!-- 第三方插件(扩展方法及函数) -->
     <script src="~/Scripts/plugins/underscore/underscore.js"></script>
-    <script src="~/Scripts/plugins/moment/moment.min.js"></script>
     <script src="~/Scripts/plugins/moment/moment-with-locales.js"></script>
 
     <!-- 自定义扩展 -->
     <script src="~/Scripts/abputil/abp.js"></script>
+    <script>
+    //abp.localization.defaultSourceName = "BeiDream";  //设置默认的本地化资源名称(多语言项目需要)
+    moment.locale('@Thread.CurrentThread.CurrentUICulture.Name'); //设置moment本地化
+    </script>
+
     <script src="~/Scripts/abputil/abp.jquery.js"></script>
     <script src="~/Scripts/abputil/abp.sweet-alert.js"></script>
     <script src="~/Scripts/abputil/abp.toastr.js"></script>
 
-    <script src="~/Scripts/util/helpers.js"></script>
+   <script src="~/Scripts/util/helpers.js"></script>
+    <script src="~/Scripts/util/ModalManager.js"></script>
 
-    <!-- 后端动态生成使用js-->
+
+
+<!-- 后端动态生成使用js-->
     <script src="~/api/AbpServiceProxies/GetAll"></script>
     <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
 

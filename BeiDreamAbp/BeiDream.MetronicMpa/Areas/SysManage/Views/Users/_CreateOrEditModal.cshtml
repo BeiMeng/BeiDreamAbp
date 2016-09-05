@@ -1,0 +1,11 @@
+﻿@model string
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml", "新增或修改")
+
+<div class="modal-body">
+
+    <div style="padding: 10px"><h3>@Model</h3></div>
+
+
+</div>
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")
