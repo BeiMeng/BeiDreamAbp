@@ -927,6 +927,8 @@
     <Content Include="metronic\assets\global\plugins\commonPlugins\jquery-validation\js\localization\methods_nl.min.js" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\jquery-validation\js\localization\methods_pt.js" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\jquery-validation\js\localization\methods_pt.min.js" />
+    <Content Include="metronic\assets\global\plugins\commonPlugins\spinjs\jquery.spin.js" />
+    <Content Include="metronic\assets\global\plugins\commonPlugins\spinjs\spin.js" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\sweetalert\ie9.css" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\sweetalert\sweet-alert.css" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\sweetalert\sweet-alert.html" />
@@ -1027,8 +1029,10 @@
     <Content Include="metronic\assets\admin\scripts\theme.js" />
     <Content Include="metronic\assets\layouts\layout2\scripts\layout.js" />
     <Content Include="metronic\assets\layouts\layout2\scripts\layout.min.js" />
+    <Content Include="Scripts\abputil\abp.blockUI.js" />
     <Content Include="Scripts\abputil\abp.jquery.js" />
     <Content Include="Scripts\abputil\abp.js" />
+    <Content Include="Scripts\abputil\abp.spin.js" />
     <Content Include="Scripts\abputil\abp.sweet-alert.js" />
     <Content Include="Scripts\abputil\abp.toastr.js" />
     <Content Include="Scripts\plugins\moment\locales.js" />
@@ -1039,6 +1043,7 @@
     <Content Include="Scripts\plugins\moment\tests.js" />
     <Content Include="Scripts\plugins\underscore\underscore.js" />
     <Content Include="Scripts\plugins\underscore\underscore.min.js" />
+    <Content Include="Scripts\util\consts.js" />
     <Content Include="Scripts\util\helpers.js" />
     <Content Include="Scripts\util\ModalManager.js" />
     <Content Include="Web.config" />
@@ -1058,6 +1063,7 @@
     <Compile Include="Areas\Admin\Models\Layout\NotificationMenuViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\PageMenuViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Layout\SidebarViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\LoginVm.cs" />
     <Compile Include="Areas\StudentsManage\Controllers\StudentRegisterController.cs" />
     <Compile Include="Areas\StudentsManage\StudentsManageAreaRegistration.cs" />
     <Compile Include="Areas\SysManage\Controllers\ThemeSettingController.cs" />
