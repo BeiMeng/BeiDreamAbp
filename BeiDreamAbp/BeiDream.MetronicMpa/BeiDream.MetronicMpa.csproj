@@ -152,6 +152,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Account\login.js" />
+    <Content Include="Areas\SysManage\Views\Roles\Index.js" />
+    <Content Include="Areas\SysManage\Views\Roles\_CreateOrEditModal.js" />
     <Content Include="Areas\SysManage\Views\ThemeSetting\Index.css" />
     <Content Include="Areas\SysManage\Views\ThemeSetting\Index.js" />
     <Content Include="Areas\SysManage\Views\Users\Index.js" />
@@ -1066,8 +1068,10 @@
     <Compile Include="Areas\Admin\Models\LoginVm.cs" />
     <Compile Include="Areas\StudentsManage\Controllers\StudentRegisterController.cs" />
     <Compile Include="Areas\StudentsManage\StudentsManageAreaRegistration.cs" />
+    <Compile Include="Areas\SysManage\Controllers\RolesController.cs" />
     <Compile Include="Areas\SysManage\Controllers\ThemeSettingController.cs" />
     <Compile Include="Areas\SysManage\Controllers\UsersController.cs" />
+    <Compile Include="Areas\SysManage\Models\RoleQueryVm.cs" />
     <Compile Include="Areas\SysManage\Models\UserQueryVm.cs" />
     <Compile Include="Models\UI\DataTables\DataTablesParameters.cs" />
     <Compile Include="Models\UI\DataTables\DataTablesResult.cs" />
@@ -1125,6 +1129,8 @@
     <Content Include="Areas\WorkingManage\Views\_ViewStart.cshtml" />
     <Content Include="Areas\SysManage\Views\web.config" />
     <Content Include="Areas\SysManage\Views\_ViewStart.cshtml" />
+    <None Include="Areas\SysManage\Views\Roles\Index.cshtml" />
+    <None Include="Areas\SysManage\Views\Roles\_CreateOrEditModal.cshtml" />
     <None Include="Areas\SysManage\Views\ThemeSetting\Index.cshtml" />
     <None Include="Areas\SysManage\Views\Users\Index.cshtml" />
     <Content Include="metronic\assets\global\plugins\commonPlugins\datatables\images\Sorting icons.psd" />

@@ -527,15 +527,15 @@ namespace BeiDream.MetronicMpa
                     L("系统管理一"),
                     icon: "fa fa-music"
                     ).AddItem(new MenuItemDefinition(
-                    "User",
+                    "Users",      //菜单功能名称与其controller保持一致,以判断当前被点击的菜单项
                     L("用户管理"),
                     url: "/SysManage/Users",
                     icon: "fa fa-music",
                     requiresAuthentication: true
                     )).AddItem(new MenuItemDefinition(
-                        "Role",
+                        "Roles",
                         L("角色管理"),
-                        url: "/SysManage/Role",
+                        url: "/SysManage/Roles",
                         icon: "fa fa-music",
                         requiresAuthentication: true
                     ))

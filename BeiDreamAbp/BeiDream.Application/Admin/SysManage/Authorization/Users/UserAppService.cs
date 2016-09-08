@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Linq.Dynamic;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
@@ -23,7 +24,9 @@ namespace BeiDream.Application.Admin.SysManage.Authorization.Users
                         u.Surname.Contains(input.Filter) ||
                         u.UserName.Contains(input.Filter) ||
                         u.EmailAddress.Contains(input.Filter)
-                );
+                )
+                .WhereIf(!input.UserName.IsNullOrWhiteSpace(), u => u.Name.Contains(input.Filter))
+                .Where(u => u.CreationTime > input.StartCreateTime && u.CreationTime < input.EndCreateTime);
 
             var userCount = await query.CountAsync();
             var users = await query

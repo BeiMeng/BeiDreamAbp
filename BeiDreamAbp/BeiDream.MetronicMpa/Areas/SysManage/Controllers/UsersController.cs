@@ -21,9 +21,8 @@ namespace BeiDream.MetronicMpa.Areas.SysManage.Controllers
         }
 
         // GET: SysManage/Users
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            var users =await _userAppService.GetUsers(new GetUsersInput());
             LayoutParamsViewModel.Title = "用户管理";
             WrapLayoutParams(this.HttpContext);
             return View(LayoutParamsViewModel);
@@ -32,6 +31,8 @@ namespace BeiDream.MetronicMpa.Areas.SysManage.Controllers
         public async Task<JsonResult> GetUserDatas(UserQueryVm query)
         {
             GetUsersInput usersInput=new GetUsersInput();
+            usersInput.UserName = query.UserName;
+            usersInput.StartCreateTime = query.StartCreateTime;
             usersInput.Filter = query.Search.Value;
             usersInput.SkipCount = query.Start;
             usersInput.MaxResultCount = query.Length;

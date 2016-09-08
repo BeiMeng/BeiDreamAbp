@@ -73,6 +73,10 @@
     <Compile Include="Admin\Configuration\Host\HostSettingsAppService.cs" />
     <Compile Include="Admin\Configuration\Host\IHostSettingsAppService.cs" />
     <Compile Include="Admin\SysManage\Authorization\AbpLoginResultTypeHelper.cs" />
+    <Compile Include="Admin\SysManage\Authorization\Roles\Dto\GetRolesInput.cs" />
+    <Compile Include="Admin\SysManage\Authorization\Roles\Dto\RoleListDto.cs" />
+    <Compile Include="Admin\SysManage\Authorization\Roles\IRoleAppService.cs" />
+    <Compile Include="Admin\SysManage\Authorization\Roles\RoleAppService.cs" />
     <Compile Include="AppConsts.cs" />
     <Compile Include="ApplicationModule.cs" />
     <Compile Include="AppServiceBase.cs" />
