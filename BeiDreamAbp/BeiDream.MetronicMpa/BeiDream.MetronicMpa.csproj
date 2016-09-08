@@ -1156,6 +1156,10 @@
     <Folder Include="Areas\WorkingManage\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Abp.Zero\Abp.Zero\Abp.Zero.csproj">
+      <Project>{70d916f2-9bff-43da-b3f7-3e0655114d48}</Project>
+      <Name>Abp.Zero</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Abp\Abp.Web.Api\Abp.Web.Api.csproj">
       <Project>{71962f97-5e4b-465c-9a21-2153d31992cf}</Project>
       <Name>Abp.Web.Api</Name>

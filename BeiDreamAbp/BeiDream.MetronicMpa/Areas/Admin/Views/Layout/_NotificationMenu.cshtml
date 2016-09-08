@@ -346,19 +346,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="page_user_login_1.html">
-                        <i class="icon-key"></i> Log Out
+                    <a href="@Url.Action("Logout", "Account", new {area = "Admin"})">
+                        <i class="icon-logout"></i> 退出
                     </a>
                 </li>
             </ul>
         </li>
         <!-- END USER LOGIN DROPDOWN -->
-        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-        <li class="dropdown dropdown-extended quick-sidebar-toggler">
-            <span class="sr-only">Toggle Quick Sidebar</span>
-            <i class="icon-logout"></i>
-        </li>
-        <!-- END QUICK SIDEBAR TOGGLER -->
     </ul>
 </div>

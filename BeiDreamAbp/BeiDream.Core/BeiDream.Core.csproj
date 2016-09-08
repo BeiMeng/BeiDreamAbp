@@ -73,6 +73,7 @@
     <Compile Include="Admin\SysManage\Configuration\ThemeSettingProvider.cs" />
     <Compile Include="Admin\SysManage\MultiTenancy\Tenant.cs" />
     <Compile Include="Admin\SysManage\ThemeSetting\ThemeSettingOptionsNames.cs" />
+    <Compile Include="BeiDreamServiceBase.cs" />
     <Compile Include="CoreModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

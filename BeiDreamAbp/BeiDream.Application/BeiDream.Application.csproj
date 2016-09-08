@@ -72,6 +72,7 @@
     <Compile Include="Admin\Configuration\Host\Dto\ThemeSettingEditDto.cs" />
     <Compile Include="Admin\Configuration\Host\HostSettingsAppService.cs" />
     <Compile Include="Admin\Configuration\Host\IHostSettingsAppService.cs" />
+    <Compile Include="Admin\SysManage\Authorization\AbpLoginResultTypeHelper.cs" />
     <Compile Include="AppConsts.cs" />
     <Compile Include="ApplicationModule.cs" />
     <Compile Include="AppServiceBase.cs" />
