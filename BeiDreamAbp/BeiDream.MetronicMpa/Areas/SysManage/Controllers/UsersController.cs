@@ -33,6 +33,7 @@ namespace BeiDream.MetronicMpa.Areas.SysManage.Controllers
             GetUsersInput usersInput=new GetUsersInput();
             usersInput.UserName = query.UserName;
             usersInput.StartCreateTime = query.StartCreateTime;
+            usersInput.EndCreateTime = query.EndCreateTime;
             usersInput.Filter = query.Search.Value;
             usersInput.SkipCount = query.Start;
             usersInput.MaxResultCount = query.Length;
